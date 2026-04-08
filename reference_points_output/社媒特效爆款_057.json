@@ -1,0 +1,94 @@
+{
+  "index": "社媒特效爆款_057",
+  "zh_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人在 Image 2 的场景中做跟 the video中的动作，切镜后身穿 Image 3 中的衣服在 Image 4点场景中微笑看着镜头。",
+  "running_params": "{\"duration\": \"9s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望融合多个素材，生成一个两段式变装视频。视频主体使用Image 1中的女性，第一段场景为Image 2的跑道，执行the video中的手部混色动作；第二段通过转场，让主体换上Image 3的服装，出现在Image 4的森林场景中微笑。整个过程需参考the video的动作、特效、剪辑和音乐节奏。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 参考视频前半段（0-5秒）人物的手部动作序列：依次展示涂有颜料的左手和右手，然后双手合十揉搓混合颜色，最后展示混合后的颜色。",
+              "[P1] 参考视频后半段（6秒后）人物的动作状态：面带微笑，与镜头互动，并进行一些轻微的、展示性的动作（如玩泡泡）。"
+            ],
+            "editing_techniques": [
+              "[P0] 参考视频在第5秒处的场景切换方式，即从室内场景到室外植物园场景的直接切换，并伴随音乐节奏的卡点。"
+            ],
+            "special_effects": [
+              "[P0] 参考视频前半段的特效风格，即颜色（柠檬黄、天蓝）凭空出现在手掌上，并混合成新颜色（绿色）的视觉效果。"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 强制使用与参考视频完全相同的背景音乐，以对齐视频的节奏和剪辑点。"
+            ],
+            "sound_effects": [
+              "[P1] 保留视频转场时的“叮”声提示音效，以增强转场的魔法感。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 使用图片中女性的人物形象作为生成视频的主角，包括她的脸部特征、棕色长卷发发型和妆容。在视频的第一段场景中，保留她身穿的原始服装（白色荷叶边衬衫和棕色马甲）。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 使用该图片中的红色塑胶跑道作为视频第一段场景的背景。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 使用图片中的服装（带有浅绿色薄纱长袖和领结的深绿色连衣裙）作为主角在视频第二段场景中穿着的衣服。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "environment": [
+              "[P0] 使用该图片中阳光穿透树木的宁静森林作为视频第二段场景的背景。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "参考视频 the video 中的原始人物主体（短发女孩）",
+        "参考视频 the video 中的原始场景（第一段的室内房间和第二段的植物园）",
+        "参考视频 the video 中人物的服装（灰色卫衣和绿色开衫学院风套装）"
+      ],
+      "audio_layer_discards": [
+        "参考视频 the video 中出现的“柠檬黄”、“天蓝”等文字说明"
+      ]
+    },
+    "generation_instructions": "视觉层：生成一个两段式视频。第一段，主角为Image 1中的女性（保留其面容、发型和原始服装），场景为Image 2的红色跑道。她需复现the video前5秒的手部混色动作，并应用相似的颜色出现特效。第二段，通过一个快速卡点转场（参考the video的剪辑方式），场景切换为Image 4的森林，主角换上Image 3中的绿色连衣裙，面带微笑看着镜头。音频层：全程使用the video的背景音乐，并保留转场时的关键音效。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "“魔法变装”：通过手势和特效触发的场景与服装突变，是经典的视觉爽点和流量密码。",
+        "“反差场景”：将一个特定风格的人物（如Image 1的复古/奇幻风）置于一个不相关的现代场景（如Image 2的跑道），制造新奇感和记忆点。",
+        "“手势魔法”：开头的神秘手势能有效吸引用户注意力，引导其期待后续的“魔法”结果。"
+      ],
+      "audio_layer_hooks": [
+        "“卡点音乐”：音乐的节奏与画面的剪辑、动作和特效的触发点精确同步，极大地提升了视频的观赏流畅度和高级感。",
+        "“标志性音效”：在关键的转场时刻加入一个清脆的“叮”声，能强化“魔法发生”的心理暗示，让变装效果更具冲击力。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "index": "社媒特效爆款_058",
+  "zh_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人在 Image 3 的场景中，切镜后变成 Image 2 中的造型风格。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望生成一个变装视频，将指定人物（Image 1）在指定场景（Image 3）中，通过模仿参考视频（the video）的动作、特效、剪辑手法和音乐节奏，变身为另一个造型（Image 2）。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 模仿人物核心动作序列：先用手比出V字手势靠近镜头，然后手掌移开，露出面部。"
+            ],
+            "editing_techniques": [
+              "[P0] 采用与手部动作同步的快速硬切（Hard Cut）转场方式，实现从变装前到变装后的瞬间切换。"
+            ],
+            "special_effects": [
+              "[P0] 参考变装后人物吐出烟雾的视觉特效。"
+            ],
+            "composition": [
+              "[P1] 保持以人物面部和上半身为视觉中心的特写或近景构图。"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 强制使用原视频中具有强烈节奏感的电子背景音乐，以确保剪辑和动作能够卡点。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 使用该图片中女性的面部特征作为视频前半段（变装前）的主体。特征为：亚洲女性面孔，长直黑发，素颜或淡妆状态。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 使用该图片中女性的造型作为视频后半段（变装后）的主体。特征为：与Image 1相同的面孔，但变为精致妆容、波浪卷发、身穿金色抹胸礼服并佩戴华丽项链的造型。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "environment": [
+              "[P0] 使用该图片中的场景作为整个视频的背景。特征为：具有工业风格的咖啡馆，包含裸露砖墙、木制桌椅、大型玻璃格窗和暖色调的球形吊灯。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的原人物主体（包括其长相、发型和服饰）",
+        "the video中的原背景（纯色墙面）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉层：生成一段视频。视频主体为Image 1中的女性，背景为Image 3的咖啡馆。她首先做出与the video中一致的V字手势靠近镜头再移开的动作。在手势移开的瞬间，通过一个快速硬切，主体瞬间变身为Image 2中的华丽造型。变装完成后，主体需做出一个吐出烟雾的特效动作。整个过程保持面部特写构图。\n音频层：使用the video中的原版电子背景音乐，并确保视觉上的硬切转场和动作节奏与音乐节拍精准同步。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "“一秒变装”：利用快速剪辑和手势遮挡创造出瞬间换装的巨大视觉反差，是短视频平台的核心爽点之一。",
+        "名人效应：使用知名人物（刘亦菲）的形象，能够迅速吸引粉丝和大众的注意力。",
+        "场景反差：在日常的咖啡馆场景中进行华丽的礼服变装，形成一种“日常中的非日常”戏剧性冲突，增加趣味性。"
+      ],
+      "audio_layer_hooks": [
+        "强节奏卡点：使用节奏感极强的电音BGM，并让所有视觉变化（尤其是转场）都精确地踩在鼓点上，为观众带来极大的听觉和视觉满足感，是提升完播率和分享欲的关键。"
+      ]
+    }
+  }
+}

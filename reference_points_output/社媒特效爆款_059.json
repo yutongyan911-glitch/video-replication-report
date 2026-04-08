@@ -1,0 +1,84 @@
+{
+  "index": "社媒特效爆款_059",
+  "zh_prompt": "参考 the video 的人物动作、音乐、运镜节奏和手部遮挡的切镜方式，让 Image 1 中的女人在 Image 2 的场景中背对镜头向前走，随后切镜转场为 Image 3 中的女人在海滩边上向前行走。",
+  "running_params": "{\"duration\": \"9s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望使用一个视频模板，将两个不同图片中的人物和场景，套用到该模板的运镜、动作、转场和音乐中，生成一个全新的变装转场视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 主体从背对镜头开始，持续向前行走的动作。"
+            ],
+            "camera_movement": [
+              "[P0] 从主体背后进行跟随拍摄的运镜方式。"
+            ],
+            "editing_techniques": [
+              "[P0] 通过一只手覆盖并遮挡住镜头，作为场景切换的转场方式。"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 沿用视频中完整的背景音乐。"
+            ],
+            "sound_effects": [
+              "[P1] 保留手部遮挡镜头转场时同步出现的“嗖”声特效音。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 视频前半段的主体，保留其外貌特征：一位留着黑色长发、身穿白色短袖Polo校服的年轻东亚女性。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 视频前半段的场景：一个以米白色和浅灰色为主色调、装修风格现代简约、光线明亮的客厅内部环境。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 视频后半段的主体，保留其外貌特征：一位留着棕色长发、身穿灰色无袖分层连衣裙的女性。"
+            ],
+            "environment": [
+              "[P0] 视频后半段的场景：一个有着城市远景的傍晚海滩边，主体在靠近海浪的沙滩上。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的原始人物（白裙女子、红衣古风女子）",
+        "the video中的原始场景（酒店走廊、古风建筑阳台）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉上，第一段镜头，让Image 1中的女性在Image 2的客厅中背对镜头向前走，摄像机从后方跟随拍摄。随后，用一只手遮挡住镜头，实现转场。转场后，切换为第二段镜头，让Image 3中的女性在Image 3的海滩场景中同样背对镜头向前走，摄像机继续从后方跟随。音频上，全程使用the video的背景音乐，并在手部遮挡镜头转场时，配合同步的音效。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "“伸手遮挡”是一种极具互动感和代入感的转场技巧，能有效抓住用户注意力。",
+        "场景的巨大反差（从室内到海滩）和人物的变装效果，是经典的视觉冲击力组合，满足了用户对“穿越”或“梦想成真”的想象。",
+        "始终采用跟随背影的拍摄视角，制造了悬念和窥视感，激发观众的好奇心。"
+      ],
+      "audio_layer_hooks": [
+        "使用节奏感强、情绪饱满的流行BGM，能够快速带动视频节奏，引导观众情绪，是短视频吸引力的关键。",
+        "转场音效与视觉动作的精准卡点，提供了流畅且舒适的观看体验，提升了视频的整体质感。"
+      ]
+    }
+  }
+}

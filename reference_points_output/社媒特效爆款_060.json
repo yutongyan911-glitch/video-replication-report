@@ -1,0 +1,86 @@
+{
+  "index": "社媒特效爆款_060",
+  "zh_prompt": "参考 the video 的人物动作、音乐、特效风格和剪影的切镜方式，让 Image 1 中的女人在 Image 2 的场景中向前走，随后做出 Image 3 中女人的芭蕾舞动作，切镜后场景变为 Image 4 的场景。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望生成一个新视频，让Image 1的女性在Image 2的场景中行走，然后做出Image 3的芭蕾舞动作，最后切换到Image 4的场景，整个过程需要参考the video的动作、音乐、特效和剪辑风格。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 人物从画面一侧走入，随后做出一个核心动作（扔帽子），并以一个帅气的姿势结束（单脚踩在石头上）。"
+            ],
+            "editing_techniques": [
+              "[P0] 从实拍人物场景硬切到一个风格化的剪影画面。"
+            ],
+            "special_effects": [
+              "[P0] 使用视觉特效实现物体（帽子）以非物理轨迹飞行并精准落在人物头上的效果。"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 强制使用视频中完整的西部风格、由人声哼唱的背景音乐。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 生成视频的主体人物，保留其完整外观：一位将金色长发盘成丸子头的白人女性，身穿黑色高领长袖露脐上衣、浅蓝色破洞宽松牛仔裤和白色运动鞋。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 视频前半部分的背景场景：一条两旁种满绿树的湿润沥青马路，远处有模糊的建筑和行人，整体构图具有纵深感。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 主体人物需要做出的芭蕾舞动作：身体舒展，单臂优雅举起，另一只手轻抚，双腿交叉呈芭蕾舞姿态。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "environment": [
+              "[P0] 视频在切镜后需要变换成的最终场景：一个充满金色夕阳光辉的宏伟古典风格大厅，拥有巨大的拱形窗户、罗马柱，窗外是翻涌的云海。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的主体人物（戴眼镜、穿棕色棉服的男子）",
+        "the video中的场景（下着雪的乡村石堆旁）",
+        "the video结尾的剪影画面（三个牛仔靠在栅栏上）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉层：\n1. 视频主体为Image 1中的女性。\n2. 初始场景为Image 2的街道，女性从一侧向前行走。\n3. 随后，女性做出一个类似Image 3的芭蕾舞动作，该动作的呈现应带有类似the video中帽子飞行的特效感。\n4. 动作结束后，画面采用硬切方式，场景切换为Image 4的宏伟古典大厅。\n\n音频层：\n1. 整个视频使用the video中的背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "“场景突变”反差感：从普通的街道日常行走，突然切换到优雅的芭蕾舞动作，再突变为宏伟的幻想殿堂，强烈的场景与行为反差是核心视觉钩子。",
+        "“万物皆可变装”模板：本质上是变装视频的变体，通过一个标志性动作触发场景和身份（从街头女孩到舞者）的切换，满足观众对“一键变身”的爽点预期。"
+      ],
+      "audio_layer_hooks": [
+        "听觉与视觉的“错位感”：使用具有强烈叙事感的西部风格哼唱音乐，搭配一个现代女性在不同场景中跳芭蕾的画面，这种听觉与视觉内容的不协调感会引发观众的好奇心和记忆点。"
+      ]
+    }
+  }
+}

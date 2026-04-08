@@ -1,0 +1,76 @@
+{
+  "index": "经典影视_092",
+  "zh_prompt": "把 the video 里跳舞的女性替换成 object_1 ，把the video里跳舞的男性替换成 object_2 ，参考 the video 里跳舞的动作，让 object_1 和 object_2 在 Image 1 的场景里跳舞。",
+  "running_params": "{\"duration\": \"14s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将视频中的男女舞者替换为蒙娜丽莎和唐僧，在新的工业风场景中，复刻原视频的舞蹈动作。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 参考视频中男女主角标志性的双人扭扭舞动作，包括但不限于：左右摇摆、双腿交替弯曲、以及女性用手指在眼前划过V字等特定手部姿势。"
+            ],
+            "composition": [
+              "[P1] 参考视频中能够将两名舞者全身或大半身都容纳进画面的中远景固定机位构图。"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 隐式参考了视频中充满活力的复古摇滚风格背景音乐。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "environment": [
+              "[P0] 使用图片中的场景作为舞蹈背景，这是一个拥有巨大网格窗户和水泥地板的空旷工业风室内空间，角落里有一棵绿树。"
+            ],
+            "visual_style": [
+              "[P0] 继承图片中阳光透过窗户射入，在空气中形成明显光束（丁达尔效应）并与地面上的影子交错的光影风格。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 使用该图集中的蒙娜丽莎形象作为女性舞者，保留其长相、深色长发、以及身上穿着的深色天鹅绒质感古典长裙。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 使用该图集中的唐僧形象作为男性舞者，保留其光头、面部妆容、红色僧袍以及头戴的红金色毗卢冠。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的女性舞者（身穿白衬衫和黑色长裤的女性）",
+        "the video中的男性舞者（身穿黑色西装、扎着马尾的男性）",
+        "the video中的复古迪斯科舞厅背景环境"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉上，生成一段视频，主体为object_1（蒙娜丽莎）和object_2（唐僧），在一个如Image 1所示的工业风大厅里跳舞。场景需要有从窗户射入的明显光束和地面反射。两人的舞蹈动作需要严格模仿the video中男女主角的扭扭舞动作。镜头采用中远景，保持两个角色都在画面内。音频上，保留the video中的背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "文化符号混搭与反差：将东方宗教人物（唐僧）与西方艺术符号（蒙娜丽莎）进行配对，让他们在现代工业风场景中跳起经典的复古舞蹈，这种时空错乱和文化挪用带来了极强的视觉冲击和荒诞喜剧感。"
+      ],
+      "audio_layer_hooks": [
+        "经典BGM唤醒记忆：使用《低俗小说》中极具辨识度的经典配乐，能瞬间唤醒观众的记忆和情感共鸣。当熟悉的音乐配上唐僧和蒙娜丽莎跳舞的离奇画面时，听觉与视觉的巨大反差会创造出爆炸性的喜剧效果和话题性。"
+      ]
+    }
+  }
+}

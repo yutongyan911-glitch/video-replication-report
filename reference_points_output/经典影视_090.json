@@ -1,0 +1,78 @@
+{
+  "index": "经典影视_090",
+  "zh_prompt": "将 the video 中的男人换成 object_1 ，将 the video 中的女人换成 object_2 ，并参考 the video 的剧情内容生成视频。",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望将视频《大话西游》中的经典告白片段进行换脸，男主角替换为特朗普（object_1），女主角替换为甄嬛（object_2），并保留原视频的剧情、台词和配乐。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 参考男女主角之间对话时的动作与神态，包括男主角含泪告白、情绪激动，以及女主角聆听时从疑惑到感动的表情变化。"
+            ],
+            "editing_techniques": [
+              "[P0] 参考视频中男女主角对话时来回切换的正反打镜头剪辑方式。"
+            ],
+            "composition": [
+              "[P1] 参考视频中对男女主角面部特写的构图方式。"
+            ],
+            "visual_style": [
+              "[P1] 参考原视频的经典港式电影色调和柔光质感。"
+            ],
+            "environment": [
+              "[P1] 参考原视频中模糊的、暖色调的背景环境氛围。"
+            ]
+          },
+          "audio_layer": {
+            "dialogue_content": [
+              "[P0] 强制复用视频中男主角的完整告白台词：“不用再犹豫了...如果上天能够给我一个再来一次的机会，我会对那个女孩子说三个字：我爱你。”"
+            ],
+            "dialogue_style": [
+              "[P0] 参考男主角说话时深情、悔恨、带着哭腔的语气和情感。"
+            ],
+            "music_exact": [
+              "[P0] 强制使用视频中与对白同时响起的、标志性的悲伤感伤的背景音乐（《一生所爱》）。"
+            ]
+          }
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 将视频中的男主角替换为此图集中的人物形象：一位金发、身穿深色西装搭配领带的白人男性（唐纳德·特朗普）。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 将视频中的女主角替换为此图集中的人物形象：一位身穿清代皇后服饰、头戴华丽头饰、妆容精致的亚洲女性（甄嬛）。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的男性角色（至尊宝）的外观特征",
+        "原视频中的女性角色（紫霞仙子）的外观特征"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉上，生成一段视频，主体为object_1中的男性和object_2中的女性。视频需复现the video中的正反打镜头切换和人物特写构图，并模仿其动作和表情（男性含泪告白，女性感动）。音频上，必须完整使用the video中的男声告白台词、其情感语气以及完全相同的背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "反差感与荒诞感：将极具现代政治符号的特朗普与中国古典宫廷形象的甄嬛，置入经典的无厘头爱情电影场景中，形成强烈的视觉错位和文化冲突，极易引发好奇和病毒式传播。"
+      ],
+      "audio_layer_hooks": [
+        "经典复刻与情感共鸣：保留《大话西游》中“爱你一万年”的经典台词和标志性配乐《一生所爱》，这些是几代人的共同记忆，能瞬间唤起观众的情感共鸣，与荒诞的换脸视觉形成“一本正经地胡说八道”的喜剧效果。"
+      ]
+    }
+  }
+}

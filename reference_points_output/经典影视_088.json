@@ -1,0 +1,77 @@
+{
+  "index": "经典影视_088",
+  "zh_prompt": "编辑 the video ，把 the video 里那个穿黑风衣躲子弹的男性角色换成 Image 1 里的男子，并且场景要变成 Image 2 的废墟场景。",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将视频中的主角和场景，分别替换为指定图片中的人物和背景，同时保留原视频的躲子弹动作和特效。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 经典的慢动作后仰躲子弹动作，角色身体大幅度后倾和扭转以避开飞来的子弹。"
+            ],
+            "camera_movement": [
+              "[P0] 在慢动作期间，镜头围绕角色进行360度环绕拍摄，以全方位展示躲避动作，即“子弹时间”的运镜效果。"
+            ],
+            "special_effects": [
+              "[P0] 子弹在慢动作飞行时，在空气中留下的清晰可见的波纹或轨迹特效。"
+            ],
+            "visual_style": [
+              "[P1] 整体偏绿的电影色调和高对比度的光影质感。"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P0] 枪声以及子弹在慢镜头下划破空气的“咻咻”声。"
+            ],
+            "dialogue_content": [
+              "[P1] 视频开头的男性呼救台词“Trinity! Help!”。"
+            ],
+            "music_exact": [
+              "[P1] 视频中充满紧张感的电子背景音乐。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一位身材健硕、留有深色短发、只穿着黑色平角内裤的白人男性模特。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 一个充满科幻感的异星废墟场景，地面是红褐色的荒芜岩石地貌。"
+            ],
+            "visual_style": [
+              "[P0] 具有数字绘画质感的视觉风格，天空中悬挂着巨大的行星和紫色的星云。"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的男性主角（身穿黑色风衣和墨镜）",
+        "原视频中的城市天台背景（包括背后的绿色玻璃幕墙大楼）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉上，将Image 1中的男模特作为主角，置于Image 2的火星废墟场景中。主角需要完整复现the video中经典的慢动作后仰躲子弹动作。镜头需复现the video中围绕主角的环绕运镜，并保留子弹划过空气的涟漪特效。音频上，保留the video中的枪声和子弹飞行的核心音效。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "经典IP复刻与反差感重构：将《黑客帝国》中标志性的“子弹时间”动作，与一个完全不相关的角色（只穿内裤的男模）和场景（火星废墟）进行嫁接，这种强烈的视觉反差和荒诞感是核心的吸睛点和传播点。"
+      ],
+      "audio_layer_hooks": [
+        "标志性音效唤醒记忆：保留原片中极具辨识度的枪声和子弹慢速飞行的音效，能瞬间唤醒观众对《黑客帝国》的记忆，强化了对经典场景的戏仿效果，形成听觉上的“钩子”。"
+      ]
+    }
+  }
+}

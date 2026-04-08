@@ -1,0 +1,70 @@
+{
+  "index": "经典影视_093",
+  "zh_prompt": "把 the video 里的穿红色西装的男人替换成 object_1 ，把 the video 的画面风格改为 Image 1 的赛博朋克风格，其他的保持不变。",
+  "running_params": "{\"duration\": \"14s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望将视频《小丑》中经典的阶梯独舞片段进行角色和风格替换，生成一个唐僧在赛博朋克场景中跳小丑舞的视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 主体在长阶梯上边下楼边跳舞的完整动作序列，包含张开双臂、踢腿、身体摇摆等富有表现力的舞蹈动作。"
+            ],
+            "camera_movement": [
+              "[P0] 还原视频中的运镜方式，包括从上往下的俯拍镜头、从下往上的仰拍镜头，以及跟随主体移动的镜头。"
+            ],
+            "environment": [
+              "[P1] 保留视频中的核心场景：一个长长的、略显破旧的户外水泥阶梯。"
+            ],
+            "editing_techniques": [
+              "[P1] 参照原视频的剪辑节奏，在不同机位（俯拍、仰拍、跟拍）之间进行切换。"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 强制使用与原视频完全相同的背景音乐（BGM）。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "visual_style": [
+              "[P0] 采用图片的赛博朋克视觉风格，具体特征为：雨夜环境、潮湿反光的地面、以紫色和粉色为主的高饱和度霓虹灯光、充满未来感的城市建筑背景。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 采用该图集中的唐僧角色形象，包括其光头、清秀的五官、红色的袈裟以及头戴的毗卢帽。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频 a video 中的主体人物：小丑（包括其小丑妆容、绿色头发、红色西装、黄色马甲等全部外观特征）。",
+        "原视频 a video 的视觉风格：偏向写实、阴郁、复古的电影感色调和画质。"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉层：生成一个视频，主体为 object_1 中的唐僧。该角色在 the video 的阶梯场景中，完整复现 the video 中的舞蹈动作和镜头运动。整个画面的视觉风格需严格遵循 Image 1 的赛博朋克风格，包含雨夜、霓虹灯光和潮湿反光等元素。\n音频层：必须使用 the video 中完全相同的背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "核心流量密码是“文化符号的巨大反差与重塑”。将东方古典宗教人物（唐僧）置入西方流行文化经典场景（小丑阶梯舞），并用未来主义的赛博朋克风格进行包装，制造出极强的“错位感”和“混搭感”，这种强烈的视觉冲击和颠覆性创意极易引发观众的好奇和讨论。",
+        "“唐僧跳舞”本身就是一个极具话题性的meme点，打破了角色固有的严肃、沉稳的形象，具有天然的喜剧效果和传播潜力。"
+      ],
+      "audio_layer_hooks": [
+        "保留原版《小丑》的经典配乐是点睛之笔。这首音乐本身就带有强烈的悲怆、疯狂和宣泄的情感色彩。当音乐响起，观众的记忆被瞬间唤醒，但看到的却是唐僧在跳舞，这种听觉与视觉的强烈不协调感会极大地增强视频的荒诞和幽默效果，形成“一本正经地搞笑”的高级喜剧感。"
+      ]
+    }
+  }
+}

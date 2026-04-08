@@ -1,0 +1,62 @@
+{
+  "index": "效果广告爆款_039",
+  "zh_prompt": "参考 the video，生成 Image 1 的广告片",
+  "running_params": "{\"duration\": \"7s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "用户希望借鉴参考视频的广告片拍摄手法（视觉风格、运镜、展示结构），为图中的AirPods产品生成一个新的产品广告短片。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "visual_style": [
+              "[P0] 高级、简洁的3D渲染产品广告质感，具有柔和、专业的影棚光效，能凸显产品细节和材质。"
+            ],
+            "environment": [
+              "[P0] 纯净、无干扰的蓝灰色渐变背景，用于聚焦产品主体。"
+            ],
+            "camera_movement": [
+              "[P0] 动态、流畅的镜头运动。包括快速掠过产品表面的运镜，以及从特写拉远以展示产品全貌的旋转镜头。"
+            ],
+            "presentation_format": [
+              "[P0] “细节到整体”的产品展示叙事结构：先通过特写展示产品的局部细节，然后揭示产品完整形态。"
+            ],
+            "composition": [
+              "[P1] 采用特写镜头来强调产品的精细纹理和设计，随后切换到将产品置于画面中心的中景镜头。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 视频要展示的核心产品：白色的苹果AirPods Pro耳机及打开的充电盒。需要保留其完整的外观、颜色、光泽和品牌辨识度。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的主体：蓝色的阿迪达斯运动鞋。",
+        "Image 1中的背景：纯黑色背景。"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "视觉层：\n1. 生成一个3D动画风格的产品广告视频。\n2. 视频的主体是来自Image 1的白色AirPods Pro及其充电盒。\n3. 视频的整体视觉风格、光照和蓝灰色渐变背景需严格参考the video。\n4. 视频的镜头运动和结构需复刻the video：开场使用快速移动的特写镜头展示AirPods的细节（如麦克风网罩、充电盒转轴），随后镜头拉远，展示整个产品在空中悬浮并平滑旋转。\n\n音频层：\n1. 为视频匹配适合科技产品广告的、具有现代感和简约风格的电子背景音乐。\n2. 为镜头移动和产品旋转等动态效果添加微妙的音效（如swoosh）。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "“高级感3D渲染”：采用干净、平滑的3D动画风格，是当前科技产品广告的主流表现形式，能有效提升产品的价值感和现代感。",
+        "“细节-整体”叙事节奏：先通过微距镜头展示产品的精湛工艺和设计细节，吊起观众胃口，再揭示产品全貌，这种叙事手法能有效建立用户对产品品质的信赖感。",
+        "“悬浮动态展示”：在极简背景中让产品失重旋转，剥离了所有干扰元素，将产品本身塑造成一个完美的、令人向往的符号。"
+      ],
+      "audio_layer_hooks": [
+        "“科技风BGM”：虽然原片静音，但为生成的“广告片”配上简约、有节奏感的电子乐是行业标准，能精准烘托出科技、前沿的氛围。",
+        "“细节音效增强体验”：为视觉上的动态效果（如镜头快速移动、产品旋转）匹配精细的“swoosh”等音效，可以极大增强视频的精致度和观感上的流畅度。"
+      ]
+    }
+  }
+}
