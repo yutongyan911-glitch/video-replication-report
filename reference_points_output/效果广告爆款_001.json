@@ -1,0 +1,72 @@
+{
+  "index": "效果广告爆款_001",
+  "zh_prompt": "参考 the video 的切镜和人物的动作，生成展示 Image 1 中的衣服的视频，背景为 Image 2，保留原视频的台词和文字迁移。",
+  "running_params": "{\"duration\": \"11s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "融合原视频的动作、切镜、台词与字幕，将人物穿着的衣服替换为Image 1的黑色卫衣，背景替换为Image 2的咖啡店，生成新的商品展示视频",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "editing_techniques": [
+              "[P0] 保留原视频中快速切换镜头的剪辑方式，依次特写展示衣服的不同局部细节"
+            ],
+            "subject_actions": [
+              "[P0] 保留原视频中人物拉扯面料、指着领口、顺着走线比划、展示肩部包边以及双手拉伸衣服下摆等一系列展示动作"
+            ],
+            "presentation_format": [
+              "[P0] 保留原视频画面中出现的文字字幕内容及其排版样式（文字迁移）"
+            ],
+            "entity_subject": [
+              "[P1] 保留原视频中出镜女生的面部特征、妆容与齐肩短发造型"
+            ]
+          },
+          "audio_layer": {
+            "dialogue_content": [
+              "[P0] 完全复用原视频中的解说台词（如'干嘛用抗皱柔软面料啊'等）"
+            ],
+            "dialogue_style": [
+              "[P1] 保留原视频中女声自信、带有推销感的语气和音色"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 黑色长袖卫衣，胸前印有草莓蛋糕图案以及'STREWBARKY'、'Cake Sweet'、'cream DELICIOUS'等白色和粉色英文字母"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 街边的MANNER COFFEE咖啡店面，带有蓝色白字的遮阳篷，灰色的门框，以及前景中停放的盖着防雨罩的电动车"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的灰白色亨利领长袖上衣",
+        "原视频中的室内房间背景（包括置物架、落地灯等）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "以the video为基础模板，保持原视频的女生形象、展示动作、快速切镜节奏、画面字幕以及原声音频台词不变。将女生身上的衣服精准替换为Image 1中的黑色草莓蛋糕图案卫衣，并将整个画面的背景替换为Image 2中的MANNER COFFEE街边店面环境。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "通过高频的局部特写切镜配合手部指示动作，强力引导观众视线，直观且高效地展示服装细节卖点"
+      ],
+      "audio_layer_hooks": [
+        "采用连续的'干嘛...'反问句式，制造悬念与反差感，节奏明快，极具带货感染力与说服力"
+      ]
+    }
+  }
+}

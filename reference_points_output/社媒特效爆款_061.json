@@ -1,0 +1,53 @@
+{
+  "index": "社媒特效爆款_061",
+  "zh_prompt": "参考视频1的人物动作、切镜方式，生成另一个女人的视频。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "保留原视频的人物手势舞动作和卡点快切转场方式，将主角替换为另一个女性。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 跟着音乐节奏进行的一系列手势舞动作，包括双手比耶、张开手掌、握拳、挥手、单手指向镜头等富有互动感的动作"
+            ],
+            "editing_techniques": [
+              "[P0] 配合音乐节拍的快速剪辑（快切）和卡点转场，在不同场景和服装之间进行高频无缝切换"
+            ],
+            "composition": [
+              "[P1] 人物始终处于画面中央的半身或大半身特写构图，确保主体动作清晰可见"
+            ],
+            "environment": [
+              "[P1] 包含机场航站楼、黄色花海、海边公路、阳光街道、行驶的游船等多个视觉差异显著的室内外场景"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 带有强劲节拍和多语言倒数人声（'One, two, three, four', 'Uno, dos, tres, cuatro'）的动感电子舞曲（EDM），用于配合动作和转场的卡点"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中粉蓝色渐变头发的年轻女性主角及其特定的服装搭配"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一个新视频，主角替换为一位全新的女性。人物需完全复刻原视频中的手势舞动作（如比耶、张开手掌、指镜头等），并保持人物居中的半身构图。视频必须采用与原视频一致的卡点快切剪辑手法，配合原有的动感电子舞曲节拍，在多个不同场景（如机场、花海、海边、街道、游船等）之间进行快速转场。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "高颜值的年轻女性主角与极具辨识度的粉蓝色渐变发色",
+        "视觉冲击力强的多场景、多套服装快速无缝切换",
+        "富有感染力、互动感强且易于模仿的手势舞动作"
+      ],
+      "audio_layer_hooks": [
+        "节奏感极强的洗脑电子舞曲（EDM）",
+        "多语言（英语、西班牙语）的倒数人声，极大地增强了视频的期待感和节奏张力"
+      ]
+    }
+  }
+}

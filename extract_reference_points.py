@@ -24,7 +24,7 @@ from google.genai import types
 CREDENTIALS_PATH = "/Users/yanyutong/Downloads/llm-64897-gemini-79099acd0672.json"
 BASE_DIR = Path("/Users/yanyutong/.gemini/antigravity/scratch/复刻视频文件")
 OUTPUT_DIR = BASE_DIR / "reference_points_output"
-MODEL = "gemini-2.5-pro"
+MODEL = "gemini-3.1-pro-preview"
 
 # 支持的图片 MIME 类型
 IMAGE_MIME = {
@@ -335,10 +335,22 @@ def main():
 
     # 筛选
     if args.index:
-        cases = [c for c in cases if c["index"] == args.index]
-        if not cases:
-            print(f"❌ 未找到 index = {args.index}")
-            return
+        filtered = [c for c in cases if c["index"] == args.index]
+        if not filtered:
+            folder = BASE_DIR / args.index
+            if folder.exists() and folder.is_dir():
+                print(f"  ℹ️  Index {args.index} 不在 Excel 中，尝试直接从文件夹读取...")
+                cases = [{
+                    "index": args.index,
+                    "zh_prompt": "",
+                    "en_prompt": "",
+                    "running_params": "{}"
+                }]
+            else:
+                print(f"❌ 未找到 index = {args.index} (且文件夹不存在)")
+                return
+        else:
+            cases = filtered
     if args.limit:
         cases = cases[:args.limit]
 

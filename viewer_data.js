@@ -1,10 +1,190 @@
 const viewerData = [
   {
+    "id": "效果广告爆款_001",
+    "zh_prompt": "参考 the video 的切镜和人物的动作，生成展示 Image 1 中的衣服的视频，背景为 Image 2，保留原视频的台词和文字迁移。",
+    "en_prompt": "参考 the video 的切镜和人物的动作，生成展示 Image 1 中的衣服的视频，背景为 Image 2，保留原视频的台词和文字迁移。",
+    "assets": {
+      "ref_video": "效果广告爆款_001/video.mp4",
+      "gen_video": "效果广告爆款_001/generated.mp4",
+      "images": [
+        "效果广告爆款_001/Image 1.webp",
+        "效果广告爆款_001/Image 2.webp"
+      ],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "融合原视频的动作、切镜、台词与字幕，将人物穿着的衣服替换为Image 1的黑色卫衣，背景替换为Image 2的咖啡店，生成新的商品展示视频",
+      "inferred_task_type": "Reference",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "editing_techniques": [
+                "[P0] 保留原视频中快速切换镜头的剪辑方式，依次特写展示衣服的不同局部细节"
+              ],
+              "subject_actions": [
+                "[P0] 保留原视频中人物拉扯面料、指着领口、顺着走线比划、展示肩部包边以及双手拉伸衣服下摆等一系列展示动作"
+              ],
+              "presentation_format": [
+                "[P0] 保留原视频画面中出现的文字字幕内容及其排版样式（文字迁移）"
+              ],
+              "entity_subject": [
+                "[P1] 保留原视频中出镜女生的面部特征、妆容与齐肩短发造型"
+              ]
+            },
+            "audio_layer": {
+              "dialogue_content": [
+                "[P0] 完全复用原视频中的解说台词（如'干嘛用抗皱柔软面料啊'等）"
+              ],
+              "dialogue_style": [
+                "[P1] 保留原视频中女声自信、带有推销感的语气和音色"
+              ]
+            }
+          },
+          {
+            "asset_id": "Image 1",
+            "visual_layer": {
+              "entity_subject": [
+                "[P0] 黑色长袖卫衣，胸前印有草莓蛋糕图案以及'STREWBARKY'、'Cake Sweet'、'cream DELICIOUS'等白色和粉色英文字母"
+              ]
+            },
+            "audio_layer": {}
+          },
+          {
+            "asset_id": "Image 2",
+            "visual_layer": {
+              "environment": [
+                "[P0] 街边的MANNER COFFEE咖啡店面，带有蓝色白字的遮阳篷，灰色的门框，以及前景中停放的盖着防雨罩的电动车"
+              ]
+            },
+            "audio_layer": {}
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "原视频中的灰白色亨利领长袖上衣",
+          "原视频中的室内房间背景（包括置物架、落地灯等）"
+        ],
+        "audio_layer_discards": []
+      },
+      "generation_instructions": "以the video为基础模板，保持原视频的女生形象、展示动作、快速切镜节奏、画面字幕以及原声音频台词不变。将女生身上的衣服精准替换为Image 1中的黑色草莓蛋糕图案卫衣，并将整个画面的背景替换为Image 2中的MANNER COFFEE街边店面环境。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "通过高频的局部特写切镜配合手部指示动作，强力引导观众视线，直观且高效地展示服装细节卖点"
+        ],
+        "audio_layer_hooks": [
+          "采用连续的'干嘛...'反问句式，制造悬念与反差感，节奏明快，极具带货感染力与说服力"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "✅ 达成内容：保留原视频中快速切换镜头的剪辑方式，依次特写展示衣服的不同局部细节。\n✅ 达成内容：保留原视频中人物拉扯面料、指着领口、顺着走线比划、展示肩部包边以及双手拉伸衣服下摆等一系列展示动作。\n❌ 未达成/有缺失：未保留原视频画面中出现的文字字幕内容及其排版样式，生成视频中完全没有字幕。\n❌ 未达成/有缺失：未复用原视频中的解说台词，生成视频仅有背景音乐，完全丢失了人声解说。\n✅ 达成内容：成功将服装替换为黑色长袖卫衣，胸前印有草莓蛋糕图案及相应的英文字母，还原度高。\n✅ 达成内容：成功将背景替换为街边的MANNER COFFEE咖啡店面，包含蓝色遮阳篷、门框及前景的电动车。",
+      "p1_evaluation": "✅ 达成内容：保留了原视频中出镜女生的面部特征、妆容与齐肩短发造型。\n❌ 未达成/有缺失：由于人声台词完全丢失，未能保留原视频中女声自信、带有推销感的语气和音色。",
+      "visual_score": 75,
+      "audio_score": 0,
+      "total_score": 52,
+      "is_qualified": false,
+      "failure_reasons": "生成视频严重缺失P0级别的核心元素：1. 完全丢失了原视频的人声解说台词，仅剩背景音乐；2. 画面中完全没有保留原视频的文字字幕。这两项关键信息的缺失导致任务不合格。",
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 > 70）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
+    }
+  },
+  {
+    "id": "效果广告爆款_002",
+    "zh_prompt": "参考 the video 的切镜和动作，生成展示 Image 1 中的杯子的视频，把【星巴克】的台词和文字修改为【瑞幸】。",
+    "en_prompt": "参考 the video 的切镜和动作，生成展示 Image 1 中的杯子的视频，把【星巴克】的台词和文字修改为【瑞幸】。",
+    "assets": {
+      "ref_video": "效果广告爆款_002/video.mp4",
+      "gen_video": "效果广告爆款_002/generated.mp4",
+      "images": [
+        "效果广告爆款_002/Image 1.png"
+      ],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "将视频中的星巴克杯子替换为图片中的瑞幸杯子，保留原视频的动作与切镜，并将台词和字幕中的'星巴克'修改为'瑞幸'。",
+      "inferred_task_type": "Edit",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "subject_actions": [
+                "[P0] 往杯子里加冰块、倒入瓶装咖啡、手持杯子展示内部材质、盖上盖子后用力狂甩杯子测试防漏的连贯动作"
+              ],
+              "editing_techniques": [
+                "[P0] 配合加冰、倒咖啡、展示内部细节、摇晃杯子等动作的快速切镜与特写剪辑方式"
+              ],
+              "environment": [
+                "[P1] 视频背景中的百叶窗、白色桌面以及后方整齐摆放的瓶装咖啡等物理环境与道具"
+              ],
+              "presentation_format": [
+                "[P1] 先展示加冰倒咖啡的实际使用场景，接着特写展示内部材质，最后通过狂甩展示防漏性能的商品种草体裁"
+              ]
+            },
+            "audio_layer": {
+              "dialogue_content": [
+                "[P0] 复用原视频的解说文案结构，但必须将其中的'星巴克'替换为'瑞幸'"
+              ],
+              "dialogue_style": [
+                "[P1] 原视频中解说者充满激情、带有悬念感和推销感的年轻女性声音音色、语气和语调"
+              ],
+              "sound_effects": [
+                "[P1] 冰块掉落杯中的清脆碰撞声、倒咖啡液体的水流声、以及用力摇晃杯子时的物理音效"
+              ]
+            }
+          },
+          {
+            "asset_id": "Image 1",
+            "visual_layer": {
+              "entity_subject": [
+                "[P0] 白色的瑞幸咖啡（luckin coffee）不锈钢杯子，杯身印有经典的蓝色鹿头logo，具有哑光质感"
+              ]
+            }
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "原视频中的黑色星巴克不锈钢杯子",
+          "原视频画面字幕中的'星巴克'字样"
+        ],
+        "audio_layer_discards": [
+          "原视频解说台词中的'星巴克'发音"
+        ]
+      },
+      "generation_instructions": "视觉层：以the video为基础底模，将画面中的核心主体替换为Image 1中的白色瑞幸不锈钢杯子；严格保留原视频中加冰、倒咖啡、展示内部、狂甩杯子的动作以及对应的快速切镜剪辑节奏；将画面字幕中的'星巴克'修改为'瑞幸'。音频层：保留原视频的解说音色、语调及所有动作触发的音效（如冰块声、水流声），将解说台词中的'星巴克'精准替换为'瑞幸'的发音。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "通过加冰、倒咖啡的动态特写过程激发观众的食欲与代入感",
+          "微距特写展示内部304不锈钢材质，增加产品的真实感与信任度",
+          "狂甩不漏的夸张动作形成强烈的视觉冲击，直击通勤带水怕漏的用户痛点"
+        ],
+        "audio_layer_hooks": [
+          "清脆的冰块碰撞声和倒水声提供ASMR般的听觉享受，极具解压感",
+          "充满激情和情绪起伏的解说语气能够迅速抓住用户注意力，提升完播率"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "❌ 未达成：[主体替换与动作连贯性] 视频前半段（加冰、倒咖啡）以及部分特写镜头中，杯子依然是原视频的星巴克杯子，未成功替换为Image 1中的瑞幸杯子，存在严重的穿帮和不连贯。\n✅ 达成内容：[剪辑节奏] 保留了配合动作的快速切镜与特写剪辑方式。\n✅ 达成内容：[台词内容] 成功将解说文案和字幕中的“星巴克”替换为了“瑞幸”。\n❌ 未达成：[核心主体] 未能全局一致地将核心主体替换为白色的瑞幸咖啡不锈钢杯子，仅在部分镜头中闪现。",
+      "p1_evaluation": "✅ 达成内容：[物理环境] 保留了背景中的百叶窗、白色桌面以及后方摆放的瓶装咖啡。\n✅ 达成内容：[展示体裁] 维持了先展示使用场景、再展示材质、最后测试防漏的种草视频结构。\n❌ 未达成：[配音风格] 使用了与原视频完全不同的AI合成语音，失去了原视频中充满激情、带有推销感的语气和语调。\n❌ 未达成：[音效] 完全丢失了原视频中的冰块碰撞声、倒水声以及摇晃杯子时的物理音效。",
+      "visual_score": 30,
+      "audio_score": 40,
+      "total_score": 33,
+      "is_qualified": false,
+      "failure_reasons": "1. 核心主体替换严重失败：视频中多次出现原视频的星巴克杯子（如加冰、倒咖啡镜头），未能保持瑞幸杯子的全局一致性，视觉穿帮严重。2. 音频质量不达标：丢失了所有关键的环境音效（冰块声、水流声），且配音音色与原参考视频差异巨大，缺乏情感。",
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 > 70）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
+    }
+  },
+  {
     "id": "效果广告爆款_036",
     "zh_prompt": "使用 image 1，参考 the video 视频效果，生成一段新的视频。",
     "en_prompt": "Use image 1 to generate a new video referencing the effects of the video.",
     "assets": {
-      "video": "效果广告爆款_036/video.mp4",
+      "ref_video": "效果广告爆款_036/video.mp4",
+      "gen_video": null,
       "images": [
         "效果广告爆款_036/Image 1.jpg"
       ],
@@ -73,14 +253,16 @@ const viewerData = [
           "核心音频钩子是“风格模仿”。通过模仿知名带货主播（如李佳琦）标志性的、极具煽动性的口号和语气，能够瞬间唤起观众的熟悉感和记忆点，利用“梗文化”引发用户的会心一笑和情感共鸣，从而增强视频的传播力。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "效果广告爆款_037",
     "zh_prompt": "解析 the video 这个视频的爆点原因，并借鉴其文案、主题、画面风格等，重新做一个新视频;商品换成 Image 1 的机器人。",
     "en_prompt": "Analyze the reasons behind the virality of the video and draw inspiration from its copywriting, theme, and visual style to create a new video featuring the Image 1 robot as the product.",
     "assets": {
-      "video": "效果广告爆款_037/video.mp4",
+      "ref_video": "效果广告爆款_037/video.mp4",
+      "gen_video": null,
       "images": [
         "效果广告爆款_037/Image 1.jpg"
       ],
@@ -162,14 +344,16 @@ const viewerData = [
           "夸张化演绎：演员极具张力的台词和表演风格，虽然不真实，但极易引发观众的情绪共鸣或吐槽欲望，从而增加互动和传播。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "效果广告爆款_038",
     "zh_prompt": "参考 the video，生成一段广告片，台词和独白自适应生成，主体是一件蓝色连衣裙 Image 1，亚麻材质，翻领，泡泡短袖，内有弹力，正面纽扣和腰带闭合。",
     "en_prompt": "参考 the video，生成一段广告片，台词和独白自适应生成，主体是一件蓝色连衣裙 Image 1，亚麻材质，翻领，泡泡短袖，内有弹力，正面纽扣和腰带闭合。",
     "assets": {
-      "video": "效果广告爆款_038/video.mp4",
+      "ref_video": "效果广告爆款_038/video.mp4",
+      "gen_video": null,
       "images": [
         "效果广告爆款_038/Image 1.png"
       ],
@@ -234,14 +418,16 @@ const viewerData = [
           "“卡点”即正义：使用节奏感强的BGM并让画面严格跟随节拍进行剪辑，是短视频平台最主流、最有效的吸引用户注意力的手段之一，能瞬间注入活力与时尚感。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "效果广告爆款_039",
     "zh_prompt": "参考 the video，生成 Image 1 的广告片",
     "en_prompt": "Refer to the video to create a commercial for Image 1",
     "assets": {
-      "video": "效果广告爆款_039/video.mp4",
+      "ref_video": "效果广告爆款_039/video.mp4",
+      "gen_video": null,
       "images": [
         "效果广告爆款_039/Image 1.png"
       ],
@@ -303,14 +489,16 @@ const viewerData = [
           "“细节音效增强体验”：为视觉上的动态效果（如镜头快速移动、产品旋转）匹配精细的“swoosh”等音效，可以极大增强视频的精致度和观感上的流畅度。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "效果广告爆款_040",
     "zh_prompt": "参考 the video，生成一段烟台红富士的广告片，台词和文案为:“家人们，这苹果真的绝了！又脆又甜，小朋友都抢着吃！都是新鲜现发，个个红润，真的很甜！上班来一个，解渴又提神，晚上来一个，清爽不负担～”",
     "en_prompt": "参考 the video，生成一段烟台红富士的广告片，台词和文案为:“家人们，这苹果真的绝了！又脆又甜，小朋友都抢着吃！都是新鲜现发，个个红润，真的很甜！上班来一个，解渴又提神，晚上来一个，清爽不负担～”",
     "assets": {
-      "video": "效果广告爆款_040/video.mp4",
+      "ref_video": "效果广告爆款_040/video.mp4",
+      "gen_video": null,
       "images": [],
       "objects": {}
     },
@@ -377,6 +565,285 @@ const viewerData = [
           "“家人们”开头的口播文案，迅速拉近了与观众的心理距离，营造了亲切、值得信赖的直播带货氛围。"
         ]
       }
+    },
+    "evaluation": {}
+  },
+  {
+    "id": "效果广告爆款_041",
+    "zh_prompt": "参考 视频1 拍摄手法和运镜和切镜，把商品里的润肤乳变成 图片1的款式和质地，主角变成男白人20岁左右，擦完乳液后 脸变滋润了",
+    "en_prompt": "参考 视频1 拍摄手法和运镜和切镜，把商品里的润肤乳变成 图片1的款式和质地，主角变成男白人20岁左右，擦完乳液后 脸变滋润了",
+    "assets": {
+      "ref_video": "效果广告爆款_041/video.mp4",
+      "gen_video": "效果广告爆款_041/generated.mp4",
+      "images": [
+        "效果广告爆款_041/Image 1.png"
+      ],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "保留原视频的拍摄手法、运镜和剪辑节奏，将主角替换为20岁左右的白人男性，并将使用的润肤乳替换为图片1中的理肤泉款式与质地，展示使用后皮肤变滋润的对比效果。",
+      "inferred_task_type": "Edit",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "camera_movement": [
+                "[P0] 保留原视频极近距离的脸部特写镜头，以及带有手持微晃感的真实拍摄运镜。"
+              ],
+              "editing_techniques": [
+                "[P0] 保留原视频的快切剪辑手法，快速切换展示使用前、涂抹中、使用后的不同画面阶段。"
+              ],
+              "subject_actions": [
+                "[P1] 保留主角用手指触碰脸部展示皮肤状态，以及将管状乳液直接挤在脸上并涂抹的动作。"
+              ],
+              "presentation_format": [
+                "[P1] 保留先展示皮肤瑕疵，接着展示涂抹产品过程，最后展示皮肤变好（滋润）的前后对比叙事结构。"
+              ]
+            },
+            "audio_layer": {
+              "dialogue_content": [
+                "[P1] 保留原视频中的旁白声音及字幕内容（如'The moisturizer that saved my face'等）。"
+              ],
+              "music_exact": [
+                "[P1] 保留原视频中带有节奏感的背景音乐。"
+              ]
+            }
+          },
+          {
+            "asset_id": "Image 1",
+            "visual_layer": {
+              "entity_subject": [
+                "[P0] 提取图片中理肤泉（La Roche-Posay）润肤乳的包装款式（白色软管，带有蓝色方块和黑色字体）以及挤在脸上的白色乳霜质地。"
+              ]
+            },
+            "audio_layer": {}
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "原视频中的女性主角外观",
+          "原视频中使用的Dr. Althea品牌润肤乳包装及质地"
+        ],
+        "audio_layer_discards": []
+      },
+      "generation_instructions": "生成一段视频，主角设定为20岁左右的白人男性。采用极近距离的脸部特写和手持微晃感的运镜，配合快切剪辑节奏。视频开始展示男性的脸部皮肤状态，随后男性将理肤泉（La Roche-Posay）白色软管装的润肤乳挤在脸上，乳液呈现白色乳霜质地。最后展示男性擦完乳液后，脸部变得非常滋润、有光泽的状态。整个过程保持原视频的叙事节奏和动作逻辑。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "极近距离的脸部特写直击痛点，真实展示皮肤瑕疵与改善后的强烈对比（Before & After），极大增强产品的说服力",
+          "快节奏的剪辑方式保持了紧凑的视觉张力，有效抓住观众注意力，防止划走"
+        ],
+        "audio_layer_hooks": [
+          "带有个人情感色彩和悬念的旁白（'The moisturizer that saved my face'）迅速引发有同样皮肤困扰观众的共鸣",
+          "强烈的节奏感BGM配合卡点剪辑，提升了视频的观看爽感"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "【✅ 达成内容】保留了极近距离的脸部特写镜头，且具有手持微晃感的真实拍摄运镜。\n【✅ 达成内容】保留了快切剪辑手法，清晰展示了使用前（痘痘肌）、涂抹中、使用后（滋润）的不同画面阶段。\n【✅ 达成内容】成功提取并生成了理肤泉（La Roche-Posay）润肤乳的包装款式（白色软管、蓝色方块、黑色字体）以及挤在脸上的白色乳霜质地。",
+      "p1_evaluation": "【✅ 达成内容】保留了主角用手指触碰脸部展示皮肤状态，以及将管状乳液直接挤在脸上并涂抹的动作。\n【✅ 达成内容】保留了先展示皮肤瑕疵，接着展示涂抹产品过程，最后展示皮肤变好（滋润）的前后对比叙事结构。\n【❌ 未达成/有缺失：简述错误】生成的视频完全缺失了原视频的旁白声音及字幕内容。\n【❌ 未达成/有缺失：简述错误】未保留原视频的背景音乐，替换成了完全不同的纯音乐节奏。",
+      "visual_score": 100,
+      "audio_score": 0,
+      "total_score": 70,
+      "is_qualified": true,
+      "failure_reasons": null,
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。视频在视觉层面完美复现了所有的 P0 和 P1 要求，包括运镜、剪辑、产品细节和叙事结构，视觉表现极佳（100分）。但在音频层面，完全丢失了 P1 要求的旁白台词、字幕以及原背景音乐，音频得分为 0。由于所有 P0 核心点均已达成，且总分达到 70 分，判定为合格。"
+    }
+  },
+  {
+    "id": "社媒特效爆款_041",
+    "zh_prompt": "参考 the video 的转场，生成 Image 1 的视频",
+    "en_prompt": "参考 the video 的转场，生成 Image 1 的视频",
+    "assets": {
+      "ref_video": "社媒特效爆款_041/video.mp4",
+      "gen_video": "社媒特效爆款_041/generated.mp4",
+      "images": [
+        "社媒特效爆款_041/Image 1.png"
+      ],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "将Image 1中的金发美女作为主体，复用the video中假人变真人的卡点光效转场生成新视频",
+      "inferred_task_type": "Reference",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "editing_techniques": [
+                "[P0] 配合音乐节奏的瞬间卡点转场"
+              ],
+              "special_effects": [
+                "[P0] 强烈的闪电与光影爆闪特效，用于主体状态切换的视觉过渡"
+              ],
+              "presentation_format": [
+                "[P1] 前半段展示无脸假人模型，后半段转变为真实人物的对比展示形式"
+              ]
+            },
+            "audio_layer": {
+              "music_exact": [
+                "[P1] 带有强烈节奏感和英文人声演唱的动感背景音乐"
+              ]
+            }
+          },
+          {
+            "asset_id": "Image 1",
+            "visual_layer": {
+              "entity_subject": [
+                "[P0] 留着金色长卷发、五官精致的年轻女性，身穿带有亮片镶钻设计的华丽金色垂坠感长裙及披风"
+              ],
+              "environment": [
+                "[P1] 带有灰色背景纸和两侧专业柔光箱打光灯的室内摄影棚环境"
+              ]
+            },
+            "audio_layer": {}
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "the video中的黑色西装男明星主体",
+          "the video中的黑色西装假人模型外观"
+        ],
+        "audio_layer_discards": []
+      },
+      "generation_instructions": "以Image 1中的金发美女及其金色华丽长裙为核心主体，背景设定为Image 1的摄影棚环境。视频前半段展示穿着该金色长裙的无脸假人模型，随后严格复用the video中的爆闪光效和卡点剪辑手法，瞬间转场变为Image 1中真实的金发美女。全程使用the video的原版背景音乐进行卡点配合。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "假人变真人的强烈视觉反差",
+          "爆闪光效配合卡点转场带来的爽感",
+          "红黑对比的神秘高级感打光"
+        ],
+        "audio_layer_hooks": [
+          "极具节奏感和爆发力的卡点音乐",
+          "带有情绪张力的英文人声演唱"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "✅ 达成内容：视频成功实现了配合音乐节奏的瞬间卡点转场。\n✅ 达成内容：在主体状态切换时，使用了明显的光影爆闪特效作为视觉过渡。\n✅ 达成内容：成功生成了留着金色长卷发、五官精致的年轻女性，且穿着带有亮片镶钻设计的华丽金色垂坠感长裙及披风。",
+      "p1_evaluation": "✅ 达成内容：视频前半段展示了无脸假人模型，后半段成功转变为真实人物，形成了对比展示。\n✅ 达成内容：完美复用了原视频带有强烈节奏感和英文人声演唱的动感背景音乐。\n❌ 未达成/有缺失：视频背景沿用了原视频的红色背景，未能呈现Image 1中要求的带有灰色背景纸和两侧专业柔光箱打光灯的室内摄影棚环境。",
+      "visual_score": 85,
+      "audio_score": 100,
+      "total_score": 90,
+      "is_qualified": true,
+      "failure_reasons": null,
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 > 70）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
+    }
+  },
+  {
+    "id": "社媒特效爆款_042",
+    "zh_prompt": "参考 the video 的人物动作和切镜方式， Image 1 穿着 Image 2 分别在 Image 3 Image 4 Image 5 三个场景跳舞",
+    "en_prompt": "Referring to the character movements and cut-scene techniques in the video, the person in Image 1, wearing the outfit in Image 2, dances in the three scenes of Image 3, Image 4, and Image 5 respectively.",
+    "assets": {
+      "ref_video": "社媒特效爆款_042/video.mp4",
+      "gen_video": "社媒特效爆款_042/generated.mp4",
+      "images": [
+        "社媒特效爆款_042/Image 1.png",
+        "社媒特效爆款_042/Image 2.png",
+        "社媒特效爆款_042/Image 3.png",
+        "社媒特效爆款_042/Image 4.png",
+        "社媒特效爆款_042/Image 5.png"
+      ],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "将Image 1中的女孩换上Image 2的服装，在Image 3、4、5三个场景中，复刻原视频的跳舞动作与快切转场效果生成新视频",
+      "inferred_task_type": "Reference",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "subject_actions": [
+                "[P0] 视频中人物充满活力的跳舞动作序列，包括手臂挥舞、腿部跳跃及身体扭动等舞蹈姿态"
+              ],
+              "editing_techniques": [
+                "[P0] 视频中随着舞蹈动作快速切换不同背景场景的剪辑方式（无缝快切转场）"
+              ]
+            },
+            "audio_layer": {
+              "music_exact": [
+                "[P1] 视频中原有的节奏感强、用于配合舞蹈卡点的欢快背景音乐"
+              ]
+            }
+          },
+          {
+            "asset_id": "Image 1",
+            "visual_layer": {
+              "entity_subject": [
+                "[P0] 留着黑色齐肩短发、面带微笑的年轻亚洲女性的面部五官特征与长相"
+              ]
+            },
+            "audio_layer": {}
+          },
+          {
+            "asset_id": "Image 2",
+            "visual_layer": {
+              "entity_subject": [
+                "[P0] 黑色长袖短款上衣（胸前印有白色跑车图案及'CALIFORNIA DREAMING'等文字）与红色抽绳束脚运动长裤的服装款式、颜色及材质"
+              ]
+            },
+            "audio_layer": {}
+          },
+          {
+            "asset_id": "Image 3",
+            "visual_layer": {
+              "environment": [
+                "[P0] 红色多层教学楼建筑外观，前方带有不锈钢栏杆和绿色树冠的物理背景场景"
+              ]
+            },
+            "audio_layer": {}
+          },
+          {
+            "asset_id": "Image 4",
+            "visual_layer": {
+              "environment": [
+                "[P0] 两侧种满高大绿树的校园林荫大道，带有标线且略显湿润的柏油路面场景"
+              ]
+            },
+            "audio_layer": {}
+          },
+          {
+            "asset_id": "Image 5",
+            "visual_layer": {
+              "environment": [
+                "[P0] 带有白色分道线的红色塑胶田径跑道，背景包含绿草地、树木及骑车人物雕塑的场景"
+              ]
+            },
+            "audio_layer": {}
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "the video中的原人物长相、原服装及原背景场景",
+          "Image 1中的黄色卫衣及公园背景"
+        ],
+        "audio_layer_discards": []
+      },
+      "generation_instructions": "生成一段跳舞视频。主体人物必须保持Image 1中短发亚洲女性的面部特征，并穿着Image 2中的黑色印花短上衣与红色运动长裤。人物需完全复刻the video中的舞蹈动作序列。视频需采用the video中的快切剪辑手法，将背景依次在Image 3（红色教学楼与栏杆）、Image 4（林荫大道）和Image 5（红色塑胶跑道）三个场景中进行无缝切换。保留原视频的背景音乐以匹配舞蹈节奏。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "充满活力的少女舞蹈动作",
+          "视觉冲击力强的多场景无缝快切转场",
+          "青春活泼的视觉氛围与丰富的场景变换"
+        ],
+        "audio_layer_hooks": [
+          "节奏感强、适合卡点舞蹈的欢快背景音乐"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "✅ 达成内容：视频成功复刻了原视频中充满活力的跳舞动作序列，包括手臂挥舞、跳跃及身体扭动等姿态。\n✅ 达成内容：视频采用了随着舞蹈动作快速切换不同背景场景的快切剪辑方式。\n✅ 达成内容：人物面部特征与Image 1中的留着黑色齐肩短发、面带微笑的年轻亚洲女性高度一致。\n✅ 达成内容：人物准确穿着了Image 2中的黑色印花短上衣（带有白色跑车图案及文字）与红色抽绳束脚运动长裤。\n✅ 达成内容：视频中成功还原了Image 3中红色多层教学楼及不锈钢栏杆的背景场景。\n✅ 达成内容：视频中成功还原了Image 4中两侧种满绿树的校园林荫大道背景场景。\n✅ 达成内容：视频中成功还原了Image 5中带有白色分道线的红色塑胶田径跑道背景场景。",
+      "p1_evaluation": "✅ 达成内容：成功保留了原视频中节奏感强、用于配合舞蹈卡点的欢快背景音乐。",
+      "visual_score": 90,
+      "audio_score": 100,
+      "total_score": 93,
+      "is_qualified": true,
+      "failure_reasons": null,
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 > 70）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
     }
   },
   {
@@ -384,7 +851,8 @@ const viewerData = [
     "zh_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人依次变装为 Image 2 、 Image 3 、Image 4 、Image 5 中的衣服，画面风格要和衣服的色系相统一。",
     "en_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人依次变装为 Image 2 、 Image 3 、Image 4 、Image 5 中的衣服，画面风格要和衣服的色系相统一。",
     "assets": {
-      "video": "社媒特效爆款_056/video.mp4",
+      "ref_video": "社媒特效爆款_056/video.mp4",
+      "gen_video": null,
       "images": [
         "社媒特效爆款_056/Image 1.png",
         "社媒特效爆款_056/Image 2.jpg",
@@ -489,14 +957,16 @@ const viewerData = [
           "音乐中清晰的鼓点和节拍是实现“卡点”的核心，为剪辑提供了天然的锚点，强化了视频的爽感。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "社媒特效爆款_057",
     "zh_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人在 Image 2 的场景中做跟 the video中的动作，切镜后身穿 Image 3 中的衣服在 Image 4点场景中微笑看着镜头。",
     "en_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人在 Image 2 的场景中做跟 the video中的动作，切镜后身穿 Image 3 中的衣服在 Image 4点场景中微笑看着镜头。",
     "assets": {
-      "video": "社媒特效爆款_057/video.mp4",
+      "ref_video": "社媒特效爆款_057/video.mp4",
+      "gen_video": null,
       "images": [
         "社媒特效爆款_057/Image 1.png",
         "社媒特效爆款_057/Image 2.png",
@@ -593,14 +1063,16 @@ const viewerData = [
           "“标志性音效”：在关键的转场时刻加入一个清脆的“叮”声，能强化“魔法发生”的心理暗示，让变装效果更具冲击力。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "社媒特效爆款_058",
     "zh_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人在 Image 3 的场景中，切镜后变成 Image 2 中的造型风格。",
     "en_prompt": "参考 the video 的人物动作、音乐节奏、特效风格和切镜方式，让 Image 1 中的女人在 Image 3 的场景中，切镜后变成 Image 2 中的造型风格。",
     "assets": {
-      "video": "社媒特效爆款_058/video.mp4",
+      "ref_video": "社媒特效爆款_058/video.mp4",
+      "gen_video": null,
       "images": [
         "社媒特效爆款_058/Image 1.png",
         "社媒特效爆款_058/Image 2.png",
@@ -682,14 +1154,16 @@ const viewerData = [
           "强节奏卡点：使用节奏感极强的电音BGM，并让所有视觉变化（尤其是转场）都精确地踩在鼓点上，为观众带来极大的听觉和视觉满足感，是提升完播率和分享欲的关键。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "社媒特效爆款_059",
     "zh_prompt": "参考 the video 的人物动作、音乐、运镜节奏和手部遮挡的切镜方式，让 Image 1 中的女人在 Image 2 的场景中背对镜头向前走，随后切镜转场为 Image 3 中的女人在海滩边上向前行走。",
     "en_prompt": "参考 the video 的人物动作、音乐、运镜节奏和手部遮挡的切镜方式，让 Image 1 中的女人在 Image 2 的场景中背对镜头向前走，随后切镜转场为 Image 3 中的女人在海滩边上向前行走。",
     "assets": {
-      "video": "社媒特效爆款_059/video.mp4",
+      "ref_video": "社媒特效爆款_059/video.mp4",
+      "gen_video": null,
       "images": [
         "社媒特效爆款_059/Image 1.png",
         "社媒特效爆款_059/Image 2.jpg",
@@ -775,14 +1249,16 @@ const viewerData = [
           "转场音效与视觉动作的精准卡点，提供了流畅且舒适的观看体验，提升了视频的整体质感。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "社媒特效爆款_060",
     "zh_prompt": "参考 the video 的人物动作、音乐、特效风格和剪影的切镜方式，让 Image 1 中的女人在 Image 2 的场景中向前走，随后做出 Image 3 中女人的芭蕾舞动作，切镜后场景变为 Image 4 的场景。",
     "en_prompt": "参考 the video 的人物动作、音乐、特效风格和剪影的切镜方式，让 Image 1 中的女人在 Image 2 的场景中向前走，随后做出 Image 3 中女人的芭蕾舞动作，切镜后场景变为 Image 4 的场景。",
     "assets": {
-      "video": "社媒特效爆款_060/video.mp4",
+      "ref_video": "社媒特效爆款_060/video.mp4",
+      "gen_video": null,
       "images": [
         "社媒特效爆款_060/Image 1.png",
         "社媒特效爆款_060/Image 2.png",
@@ -871,6 +1347,76 @@ const viewerData = [
           "听觉与视觉的“错位感”：使用具有强烈叙事感的西部风格哼唱音乐，搭配一个现代女性在不同场景中跳芭蕾的画面，这种听觉与视觉内容的不协调感会引发观众的好奇心和记忆点。"
         ]
       }
+    },
+    "evaluation": {}
+  },
+  {
+    "id": "社媒特效爆款_061",
+    "zh_prompt": "参考视频1的人物动作、切镜方式，生成另一个女人的视频。",
+    "en_prompt": "参考视频1的人物动作、切镜方式，生成另一个女人的视频。",
+    "assets": {
+      "ref_video": "社媒特效爆款_061/video.mp4",
+      "gen_video": "社媒特效爆款_061/generated.mp4",
+      "images": [],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "保留原视频的人物手势舞动作和卡点快切转场方式，将主角替换为另一个女性。",
+      "inferred_task_type": "Edit",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "subject_actions": [
+                "[P0] 跟着音乐节奏进行的一系列手势舞动作，包括双手比耶、张开手掌、握拳、挥手、单手指向镜头等富有互动感的动作"
+              ],
+              "editing_techniques": [
+                "[P0] 配合音乐节拍的快速剪辑（快切）和卡点转场，在不同场景和服装之间进行高频无缝切换"
+              ],
+              "composition": [
+                "[P1] 人物始终处于画面中央的半身或大半身特写构图，确保主体动作清晰可见"
+              ],
+              "environment": [
+                "[P1] 包含机场航站楼、黄色花海、海边公路、阳光街道、行驶的游船等多个视觉差异显著的室内外场景"
+              ]
+            },
+            "audio_layer": {
+              "music_exact": [
+                "[P1] 带有强劲节拍和多语言倒数人声（'One, two, three, four', 'Uno, dos, tres, cuatro'）的动感电子舞曲（EDM），用于配合动作和转场的卡点"
+              ]
+            }
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "原视频中粉蓝色渐变头发的年轻女性主角及其特定的服装搭配"
+        ],
+        "audio_layer_discards": []
+      },
+      "generation_instructions": "生成一个新视频，主角替换为一位全新的女性。人物需完全复刻原视频中的手势舞动作（如比耶、张开手掌、指镜头等），并保持人物居中的半身构图。视频必须采用与原视频一致的卡点快切剪辑手法，配合原有的动感电子舞曲节拍，在多个不同场景（如机场、花海、海边、街道、游船等）之间进行快速转场。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "高颜值的年轻女性主角与极具辨识度的粉蓝色渐变发色",
+          "视觉冲击力强的多场景、多套服装快速无缝切换",
+          "富有感染力、互动感强且易于模仿的手势舞动作"
+        ],
+        "audio_layer_hooks": [
+          "节奏感极强的洗脑电子舞曲（EDM）",
+          "多语言（英语、西班牙语）的倒数人声，极大地增强了视频的期待感和节奏张力"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "❌ 未达成/有缺失：未完全复刻原视频的手势舞动作。原视频中标志性的“双手比耶”、“双手张开手掌”以及结尾的“单手指向镜头”等动作均未出现，生成视频将其替换为了单手比划数字（1、2、3、4）以及结尾的转身背对镜头，动作还原度不达标。\n✅ 达成内容：配合音乐节拍的快速剪辑（快切）和卡点转场，在不同场景和服装之间进行了高频无缝切换。",
+      "p1_evaluation": "✅ 达成内容：人物始终处于画面中央的半身或大半身特写构图，主体动作清晰可见。\n✅ 达成内容：包含了多个视觉差异显著的室内外场景（如机舱、火车站前、花海、湖泊、彩色建筑等），符合多场景切换的要求。\n✅ 达成内容：音频完美复用了原视频带有强劲节拍和多语言倒数人声的动感电子舞曲。",
+      "visual_score": 40,
+      "audio_score": 100,
+      "total_score": 58,
+      "is_qualified": false,
+      "failure_reasons": "未达成P0级别的核心动作要求。视频未能复刻原视频中标志性的双手比耶、双手张开手掌、单手指向镜头等手势舞动作，而是替换成了单手比划数字和转身背对镜头，动作还原度严重不足。",
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 > 70）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
     }
   },
   {
@@ -878,7 +1424,8 @@ const viewerData = [
     "zh_prompt": "编辑 the video ，把 the video 里那个穿黑风衣躲子弹的男性角色换成 Image 1 里的男子，并且场景要变成 Image 2 的废墟场景。",
     "en_prompt": "Edit the video by replacing the male character in a black trench coat dodging bullets with the man in Image 1, and change the setting to the ruins scene from Image 2.",
     "assets": {
-      "video": "经典影视_088/video.mp4",
+      "ref_video": "经典影视_088/video.mp4",
+      "gen_video": null,
       "images": [
         "经典影视_088/Image 1.png",
         "经典影视_088/Image 2.jpg"
@@ -956,14 +1503,16 @@ const viewerData = [
           "标志性音效唤醒记忆：保留原片中极具辨识度的枪声和子弹慢速飞行的音效，能瞬间唤醒观众对《黑客帝国》的记忆，强化了对经典场景的戏仿效果，形成听觉上的“钩子”。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "经典影视_089",
     "zh_prompt": "把 the video 里那个躺在地上的黑发男人换成 object_1 ，把拿着手枪的白种男人换成 object_2 ，把戴墨镜的白种女人换成 object_3 ，并把画面风格变成 Image 1 的温馨可爱的3D画面风格，其他的都不变。",
     "en_prompt": "Replace the black-haired man lying on the ground in the video with object_1, replace the white man holding the pistol with object_2, replace the white woman wearing sunglasses with object_3, and change the visual style to the warm and cute 3D style of Image 1 while keeping everything else unchanged.",
     "assets": {
-      "video": "经典影视_089/video.mp4",
+      "ref_video": "经典影视_089/video.mp4",
+      "gen_video": null,
       "images": [
         "经典影视_089/Image 1.png"
       ],
@@ -1079,14 +1628,16 @@ const viewerData = [
           "“声画对立”：保留原版紧张、严肃的台词和音效，与滑稽、可爱的画面形成鲜明对比，这种听觉与视觉的错位会极大地增强视频的喜剧效果和记忆点。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "经典影视_090",
     "zh_prompt": "将 the video 中的男人换成 object_1 ，将 the video 中的女人换成 object_2 ，并参考 the video 的剧情内容生成视频。",
     "en_prompt": "Replace the man in the video with object_1, replace the woman in the video with object_2, and generate a video based on the plot content of the video.",
     "assets": {
-      "video": "经典影视_090/video.mp4",
+      "ref_video": "经典影视_090/video.mp4",
+      "gen_video": null,
       "images": [],
       "objects": {
         "object_1": [
@@ -1173,14 +1724,16 @@ const viewerData = [
           "经典复刻与情感共鸣：保留《大话西游》中“爱你一万年”的经典台词和标志性配乐《一生所爱》，这些是几代人的共同记忆，能瞬间唤起观众的情感共鸣，与荒诞的换脸视觉形成“一本正经地胡说八道”的喜剧效果。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "经典影视_092",
     "zh_prompt": "把 the video 里跳舞的女性替换成 object_1 ，把the video里跳舞的男性替换成 object_2 ，参考 the video 里跳舞的动作，让 object_1 和 object_2 在 Image 1 的场景里跳舞。",
     "en_prompt": "Replace the dancing female in the video with object_1, replace the dancing male in the video with object_2, and make object_1 and object_2 dance in the scene of Image 1, referencing the dance moves in the video.",
     "assets": {
-      "video": "经典影视_092/video.mp4",
+      "ref_video": "经典影视_092/video.mp4",
+      "gen_video": null,
       "images": [
         "经典影视_092/Image 1.jpg"
       ],
@@ -1265,14 +1818,16 @@ const viewerData = [
           "经典BGM唤醒记忆：使用《低俗小说》中极具辨识度的经典配乐，能瞬间唤醒观众的记忆和情感共鸣。当熟悉的音乐配上唐僧和蒙娜丽莎跳舞的离奇画面时，听觉与视觉的巨大反差会创造出爆炸性的喜剧效果和话题性。"
         ]
       }
-    }
+    },
+    "evaluation": {}
   },
   {
     "id": "经典影视_093",
     "zh_prompt": "把 the video 里的穿红色西装的男人替换成 object_1 ，把 the video 的画面风格改为 Image 1 的赛博朋克风格，其他的保持不变。",
     "en_prompt": "Replace the man in the red suit in the video with object_1, change the visual style of the video to the cyberpunk style of Image 1, and keep everything else unchanged.",
     "assets": {
-      "video": "经典影视_093/video.mp4",
+      "ref_video": "经典影视_093/video.mp4",
+      "gen_video": null,
       "images": [
         "经典影视_093/Image 1.png"
       ],
@@ -1348,6 +1903,93 @@ const viewerData = [
           "保留原版《小丑》的经典配乐是点睛之笔。这首音乐本身就带有强烈的悲怆、疯狂和宣泄的情感色彩。当音乐响起，观众的记忆被瞬间唤醒，但看到的却是唐僧在跳舞，这种听觉与视觉的强烈不协调感会极大地增强视频的荒诞和幽默效果，形成“一本正经地搞笑”的高级喜剧感。"
         ]
       }
+    },
+    "evaluation": {}
+  },
+  {
+    "id": "经典影视_101",
+    "zh_prompt": "参考 the video，男人和女人都替换成猫猫",
+    "en_prompt": "参考 the video，男人和女人都替换成猫猫",
+    "assets": {
+      "ref_video": "经典影视_101/video.mp4",
+      "gen_video": "经典影视_101/generated.mp4",
+      "images": [],
+      "objects": {}
+    },
+    "result": {
+      "intent_summary": "将原视频中的男女主角替换为猫猫，保留原有的动作、场景、运镜及经典台词和配乐",
+      "inferred_task_type": "Edit",
+      "reference_points": {
+        "assets_mapping": [
+          {
+            "asset_id": "the video",
+            "visual_layer": {
+              "subject_actions": [
+                "[P0] 一只猫（原紫霞位置）拿剑指着另一只猫（原至尊宝位置）的喉咙，被指着的猫流泪并说话，拿剑的猫表情动容，最后剑从手中滑落掉在地上"
+              ],
+              "visual_style": [
+                "[P1] 90年代香港电影的复古色调与柔和质感"
+              ],
+              "environment": [
+                "[P1] 户外的红褐色土墙背景，点缀着几根枯树枝"
+              ],
+              "camera_movement": [
+                "[P1] 镜头在两个主体之间来回切换，包含面部特写和手部掉剑的特写"
+              ],
+              "composition": [
+                "[P1] 两人对峙的侧面双人构图，以及单人的面部特写构图"
+              ],
+              "editing_techniques": [
+                "[P1] 对话时的正反打镜头切换"
+              ]
+            },
+            "audio_layer": {
+              "dialogue_content": [
+                "[P0] 完全复用原视频中“曾经有一份真诚的爱情放在我面前……”等全部经典台词"
+              ],
+              "dialogue_style": [
+                "[P0] 复用原视频中男声深情、悔恨、哽咽的语气，以及女声的情感表达"
+              ],
+              "music_exact": [
+                "[P0] 强制使用原视频中悲伤、深情的背景音乐"
+              ],
+              "sound_effects": [
+                "[P1] 保留最后剑掉落在地上的金属碰撞音效"
+              ]
+            }
+          }
+        ]
+      },
+      "discard_elements": {
+        "visual_layer_discards": [
+          "原视频中的男人（至尊宝）的外貌特征",
+          "原视频中的女人（紫霞仙子）的外貌特征"
+        ],
+        "audio_layer_discards": []
+      },
+      "generation_instructions": "保持原视频的复古电影色调、土墙背景、正反打运镜及所有音频元素（经典台词、深情语气、BGM、掉剑音效）不变。将画面中的男人和女人分别替换为两只猫猫。其中一只猫猫需做出拿剑指着另一只猫猫喉咙的动作，并在最后松手让剑掉落；另一只猫猫需表现出流泪和说话的拟人化神态。",
+      "traffic_code_analysis": {
+        "visual_layer_hooks": [
+          "经典的剑指喉咙对峙名场面",
+          "人物深情流泪的特写镜头",
+          "武器掉落的戏剧性张力"
+        ],
+        "audio_layer_hooks": [
+          "《大话西游》极具国民度的经典台词",
+          "极具感染力的哽咽深情男声",
+          "引发共鸣的经典悲伤配乐"
+        ]
+      }
+    },
+    "evaluation": {
+      "p0_evaluation": "【✅ 达成内容】视觉主体与动作：成功将人物替换为两只穿着古装的猫，准确复现了一只猫拿剑指着另一只猫的喉咙、被指的猫流泪并有说话的嘴部动作，以及最后剑掉落在地上的关键动作。\n【✅ 达成内容】台词内容：配音内容完整包含了“曾经有一份真诚的爱情放在我面前……”等经典台词。\n【❌ 未达成/有缺失：简述错误】台词风格与语气：视频完全替换了原始音频轨道，使用了全新的配音，未能复用原视频中经典的男声和女声原音及特定的哽咽语气。\n【❌ 未达成/有缺失：简述错误】背景音乐：强制要求使用原视频的背景音乐，但生成视频将其替换为了一首带有人声演唱的歌曲，严重违反了保留原BGM的指令。",
+      "p1_evaluation": "【✅ 达成内容】视觉风格：画面呈现出复古的色调与质感，符合90年代电影的氛围。\n【✅ 达成内容】环境背景：较好地还原了户外的红褐色土墙背景。\n【✅ 达成内容】运镜：包含了在两只猫之间的镜头切换以及面部特写。\n【✅ 达成内容】构图：还原了双人侧面对峙的构图和单人特写构图。\n【✅ 达成内容】剪辑手法：在对话期间使用了正反打镜头切换。\n【❌ 未达成/有缺失：简述错误】音效：由于整体音频轨道被替换，未能保留原视频中剑掉落的原始金属碰撞音效（使用的是新配的音效）。",
+      "visual_score": 95,
+      "audio_score": 10,
+      "total_score": 69,
+      "is_qualified": false,
+      "failure_reasons": "严重违反音频 P0 要求。模型完全替换了原始音频轨道，使用了新的配音演员声音和带有演唱的人声背景音乐，未能按照指令保留原视频的经典原音、语气和指定的纯音乐BGM。",
+      "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 > 70）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
     }
   }
 ];

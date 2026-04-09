@@ -7,6 +7,7 @@ from pathlib import Path
 
 BASE_DIR = Path("/Users/yanyutong/.gemini/antigravity/scratch/复刻视频文件")
 JSON_DIR = BASE_DIR / "reference_points_output"
+EVAL_DIR = BASE_DIR / "evaluation_results"
 OUTPUT_CSV = BASE_DIR / "summary_reference_points.csv"
 OUTPUT_JS = BASE_DIR / "viewer_data.js"
 HTML_FILE = BASE_DIR / "viewer.html"
@@ -26,7 +27,7 @@ def read_original_excel():
 
 def get_assets(index):
     folder = BASE_DIR / index
-    assets = {"video": None, "images": [], "objects": {}}
+    assets = {"ref_video": None, "gen_video": None, "images": [], "objects": {}}
     if not folder.exists():
         return assets
     
@@ -34,7 +35,14 @@ def get_assets(index):
         if item.is_file():
             suffix = item.suffix.lower()
             if suffix in [".mp4", ".mov", ".avi", ".webm"]:
-                assets["video"] = f"{index}/{item.name}"
+                fname = item.name.lower()
+                rel_path = f"{index}/{item.name}"
+                if fname == "video.mp4":
+                    assets["ref_video"] = rel_path
+                elif "generated" in fname or "output" in fname or fname == "gen.mp4":
+                    assets["gen_video"] = rel_path
+                elif not assets["ref_video"]:
+                    assets["ref_video"] = rel_path
             elif item.stem.lower().startswith("image") and suffix in [".png", ".jpg", ".jpeg", ".webp", ".gif"]:
                 assets["images"].append(f"{index}/{item.name}")
         elif item.is_dir() and item.name.lower().startswith("object_"):
@@ -54,7 +62,8 @@ def main():
         writer = csv.writer(f)
         headers = ["index", "中文prompt", "英文prompt", "running_params", 
                    "intent_summary", "inferred_task_type", "generation_instructions",
-                   "traffic_code_analysis", "reference_points_json", "discard_elements_json"]
+                   "traffic_code_analysis", "score", "is_qualified",
+                   "evaluation_detail", "reference_points_json", "discard_elements_json"]
         writer.writerow(headers)
         
         # 遍历 JSON 目录
@@ -75,6 +84,15 @@ def main():
                 
             res = data.get("result", {})
             
+            # 读取评估结果 (如果有)
+            eval_file = EVAL_DIR / f"{index}_eval.json"
+            eval_res = {}
+            if eval_file.exists():
+                try:
+                    with open(eval_file, "r", encoding="utf-8") as ef:
+                        eval_res = json.load(ef).get("evaluation", {})
+                except: pass
+
             # CSV 写入
             row = [
                 index,
@@ -85,6 +103,9 @@ def main():
                 res.get("inferred_task_type", ""),
                 res.get("generation_instructions", ""),
                 json.dumps(res.get("traffic_code_analysis", {}), ensure_ascii=False),
+                eval_res.get("visual_score", "-"),
+                eval_res.get("is_qualified", "-"),
+                json.dumps(eval_res, ensure_ascii=False),
                 json.dumps(res.get("reference_points", {}), ensure_ascii=False),
                 json.dumps(res.get("discard_elements", {}), ensure_ascii=False)
             ]
@@ -96,7 +117,8 @@ def main():
                 "zh_prompt": data.get("zh_prompt", ""),
                 "en_prompt": excel_data.get(index, {}).get("en_prompt", ""),
                 "assets": get_assets(index),
-                "result": res
+                "result": res,
+                "evaluation": eval_res  # 包含评估结果
             })
             
     # 生成 JS 数据文件

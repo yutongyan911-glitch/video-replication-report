@@ -1,0 +1,63 @@
+{
+  "index": "社媒特效爆款_041",
+  "zh_prompt": "参考 the video 的转场，生成 Image 1 的视频",
+  "running_params": "{\"duration\": \"11s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将Image 1中的金发美女作为主体，复用the video中假人变真人的卡点光效转场生成新视频",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "editing_techniques": [
+              "[P0] 配合音乐节奏的瞬间卡点转场"
+            ],
+            "special_effects": [
+              "[P0] 强烈的闪电与光影爆闪特效，用于主体状态切换的视觉过渡"
+            ],
+            "presentation_format": [
+              "[P1] 前半段展示无脸假人模型，后半段转变为真实人物的对比展示形式"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 带有强烈节奏感和英文人声演唱的动感背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着金色长卷发、五官精致的年轻女性，身穿带有亮片镶钻设计的华丽金色垂坠感长裙及披风"
+            ],
+            "environment": [
+              "[P1] 带有灰色背景纸和两侧专业柔光箱打光灯的室内摄影棚环境"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的黑色西装男明星主体",
+        "the video中的黑色西装假人模型外观"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "以Image 1中的金发美女及其金色华丽长裙为核心主体，背景设定为Image 1的摄影棚环境。视频前半段展示穿着该金色长裙的无脸假人模型，随后严格复用the video中的爆闪光效和卡点剪辑手法，瞬间转场变为Image 1中真实的金发美女。全程使用the video的原版背景音乐进行卡点配合。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "假人变真人的强烈视觉反差",
+        "爆闪光效配合卡点转场带来的爽感",
+        "红黑对比的神秘高级感打光"
+      ],
+      "audio_layer_hooks": [
+        "极具节奏感和爆发力的卡点音乐",
+        "带有情绪张力的英文人声演唱"
+      ]
+    }
+  }
+}

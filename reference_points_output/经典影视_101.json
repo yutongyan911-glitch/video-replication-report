@@ -1,0 +1,70 @@
+{
+  "index": "经典影视_101",
+  "zh_prompt": "参考 the video，男人和女人都替换成猫猫",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将原视频中的男女主角替换为猫猫，保留原有的动作、场景、运镜及经典台词和配乐",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 一只猫（原紫霞位置）拿剑指着另一只猫（原至尊宝位置）的喉咙，被指着的猫流泪并说话，拿剑的猫表情动容，最后剑从手中滑落掉在地上"
+            ],
+            "visual_style": [
+              "[P1] 90年代香港电影的复古色调与柔和质感"
+            ],
+            "environment": [
+              "[P1] 户外的红褐色土墙背景，点缀着几根枯树枝"
+            ],
+            "camera_movement": [
+              "[P1] 镜头在两个主体之间来回切换，包含面部特写和手部掉剑的特写"
+            ],
+            "composition": [
+              "[P1] 两人对峙的侧面双人构图，以及单人的面部特写构图"
+            ],
+            "editing_techniques": [
+              "[P1] 对话时的正反打镜头切换"
+            ]
+          },
+          "audio_layer": {
+            "dialogue_content": [
+              "[P0] 完全复用原视频中“曾经有一份真诚的爱情放在我面前……”等全部经典台词"
+            ],
+            "dialogue_style": [
+              "[P0] 复用原视频中男声深情、悔恨、哽咽的语气，以及女声的情感表达"
+            ],
+            "music_exact": [
+              "[P0] 强制使用原视频中悲伤、深情的背景音乐"
+            ],
+            "sound_effects": [
+              "[P1] 保留最后剑掉落在地上的金属碰撞音效"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的男人（至尊宝）的外貌特征",
+        "原视频中的女人（紫霞仙子）的外貌特征"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "保持原视频的复古电影色调、土墙背景、正反打运镜及所有音频元素（经典台词、深情语气、BGM、掉剑音效）不变。将画面中的男人和女人分别替换为两只猫猫。其中一只猫猫需做出拿剑指着另一只猫猫喉咙的动作，并在最后松手让剑掉落；另一只猫猫需表现出流泪和说话的拟人化神态。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "经典的剑指喉咙对峙名场面",
+        "人物深情流泪的特写镜头",
+        "武器掉落的戏剧性张力"
+      ],
+      "audio_layer_hooks": [
+        "《大话西游》极具国民度的经典台词",
+        "极具感染力的哽咽深情男声",
+        "引发共鸣的经典悲伤配乐"
+      ]
+    }
+  }
+}

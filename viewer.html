@@ -330,6 +330,19 @@
         const caseListEl = document.getElementById('case-list');
         const contentBodyEl = document.getElementById('content-body');
 
+        // 定义需要置顶和标记 New 的 Case
+        const priorityIds = ['效果广告爆款_041', '效果广告爆款_001', '效果广告爆款_002', '社媒特效爆款_041', '社媒特效爆款_042', '经典影视_101', '社媒特效爆款_061'];
+
+        // 对数据进行排序：priorityIds 内的排在最前面
+        viewerData.sort((a, b) => {
+            const idxA = priorityIds.indexOf(a.id);
+            const idxB = priorityIds.indexOf(b.id);
+            if (idxA !== -1 && idxB !== -1) return idxA - idxB; // 如果都在列表里，按列表顺序
+            if (idxA !== -1) return -1; // a 在列表里，b 不在，a 往前排
+            if (idxB !== -1) return 1;  // b 在列表里，a 不在，b 往前排
+            return 0; // 都不在列表里，保持原序
+        });
+
         // 渲染左侧列表
         viewerData.forEach((data, index) => {
             const el = document.createElement('div');
@@ -342,12 +355,17 @@
             const objs = Object.keys(data.assets.objects).length;
             if (objs > 0) stats.push(`${objs} 主体`);
 
+            // 判断是否显示 New 标签
+            const isNew = priorityIds.includes(data.id);
+            const badgeText = isNew ? 'New' : 'Done';
+            const badgeStyle = isNew ? 'background-color: #ff9900; color: white;' : '';
+
             el.innerHTML = `
                 <div class="case-info">
                     <h3>${data.id}</h3>
                     <p>素材: ${stats.join(' | ')}</p>
                 </div>
-                <div class="badge-done">Done</div>
+                <div class="badge-done" style="${badgeStyle}">${badgeText}</div>
             `;
 
             el.onclick = () => selectCase(index);
@@ -373,52 +391,112 @@
             // 渲染素材
             const grid = document.getElementById('assets-grid');
             grid.innerHTML = '';
+            
+            // 清理旧的布局容器
+            const oldLayout = document.getElementById('media-layout-container');
+            if (oldLayout) oldLayout.remove();
 
-            // 视频
-            if (data.assets.video) {
-                grid.innerHTML += `
-                    <div class="asset-card">
-                        <div class="asset-media">
-                            <video src="${data.assets.video}" controls muted></video>
-                        </div>
-                        <div class="asset-info">
-                            <div class="asset-type">▶ VIDEO (BASE)</div>
-                            <p class="asset-name">the video</p>
-                        </div>
+            // 创建总容器 (垂直排列)
+            const layoutContainer = document.createElement('div');
+            layoutContainer.id = 'media-layout-container';
+            layoutContainer.style.display = 'flex';
+            layoutContainer.style.flexDirection = 'column';
+            layoutContainer.style.gap = '10px';
+            layoutContainer.style.marginBottom = '30px';
+
+            // 第一行：参考视频 + 参考图片 (底部对齐)
+            const row1 = document.createElement('div');
+            row1.style.display = 'flex';
+            row1.style.gap = '20px';
+            row1.style.alignItems = 'flex-end'; // 底部对齐核心指令
+
+            const videoStyle = "width:100%; max-height:280px; display:block; border-radius:4px; background:#000;";
+
+            // Row 1 - Left: 参考视频
+            if (data.assets.ref_video) {
+                const refVideoCard = document.createElement('div');
+                refVideoCard.className = 'asset-card';
+                refVideoCard.style.width = '260px';
+                refVideoCard.style.margin = '0';
+                refVideoCard.innerHTML = `
+                    <div class="asset-media" style="height:auto;">
+                        <video src="${data.assets.ref_video}" controls muted style="${videoStyle}"></video>
+                    </div>
+                    <div class="asset-info" style="padding:4px 10px;">
+                        <div class="asset-type" style="font-size:11px; color:#aaa;">📹 the video</div>
                     </div>
                 `;
+                row1.appendChild(refVideoCard);
             }
 
-            // 单图
+            // Row 1 - Right: 图片列表
+            const imageGrid = document.createElement('div');
+            imageGrid.className = 'assets-grid';
+            imageGrid.style.display = 'flex';
+            imageGrid.style.gap = '15px';
+            imageGrid.style.flexWrap = 'wrap';
+            imageGrid.style.marginBottom = '0';
+
             data.assets.images.forEach((img, i) => {
-                grid.innerHTML += `
-                    <div class="asset-card">
+                imageGrid.innerHTML += `
+                    <div class="asset-card" style="width:150px; flex-shrink:0; margin:0;">
                         <div class="asset-media">
-                            <img src="${img}">
+                            <img src="${img}" style="width:100%; height:150px; object-fit:cover;">
                         </div>
-                        <div class="asset-info">
-                            <div class="asset-type">🖼 IMAGE</div>
-                            <p class="asset-name">${img.split('/').pop()}</p>
+                        <div class="asset-info" style="padding:6px;">
+                            <div class="asset-type" style="font-size:11px; color:#aaa;">🖼 Image ${i+1}</div>
                         </div>
                     </div>
                 `;
             });
 
-            // Object图集
+            // 添加 Objects
             Object.keys(data.assets.objects).forEach(obj_name => {
                 const imgs = data.assets.objects[obj_name];
-                grid.innerHTML += `
-                    <div class="asset-card">
+                imageGrid.innerHTML += `
+                    <div class="asset-card" style="width:150px; flex-shrink:0; margin:0;">
                         <div class="asset-media">
-                            <img src="${imgs[0]}">
+                            <img src="${imgs[0]}" style="width:100%; height:150px; object-fit:cover;">
                         </div>
-                        <div class="asset-info">
-                            <div class="asset-type">📦 OBJECT (共${imgs.length}张)</div>
-                            <p class="asset-name">${obj_name}</p>
+                        <div class="asset-info" style="padding:6px;">
+                            <div class="asset-type" style="font-size:11px; color:#aaa;">📦 ${obj_name}</div>
                         </div>
                     </div>
                 `;
             });
+
+            if (data.assets.images.length > 0 || Object.keys(data.assets.objects).length > 0) {
+                row1.appendChild(imageGrid);
+            }
+
+            // 第二行：生成结果视频 (对齐 row1 的视频位)
+            const row2 = document.createElement('div');
+            row2.style.display = 'flex';
+            row2.style.gap = '20px';
+
+            if (data.assets.gen_video) {
+                const genVideoCard = document.createElement('div');
+                genVideoCard.className = 'asset-card';
+                genVideoCard.style.width = '260px';
+                genVideoCard.style.margin = '0';
+                genVideoCard.style.borderColor = 'var(--accent-blue)';
+                genVideoCard.style.background = 'rgba(62,139,255,0.05)';
+                genVideoCard.innerHTML = `
+                    <div class="asset-media" style="height:auto;">
+                        <video src="${data.assets.gen_video}" controls muted style="${videoStyle}"></video>
+                    </div>
+                    <div class="asset-info" style="padding:4px 10px;">
+                        <div class="asset-type" style="color: var(--accent-blue); font-size:11px;">✨ 生成结果</div>
+                    </div>
+                `;
+                row2.appendChild(genVideoCard);
+            }
+
+            layoutContainer.appendChild(row1);
+            layoutContainer.appendChild(row2);
+            
+            grid.parentElement.insertBefore(layoutContainer, grid);
+            grid.style.display = 'none';
 
             // 渲染解析结果
             const tBody = document.getElementById('json-table');
@@ -488,6 +566,81 @@
                 da.forEach(t => discardHtml += `<span class="tag discard">🎵 ${t}</span>`);
             }
 
+            // 格式化评估内容的辅助函数
+            const formatEvalText = (text) => {
+                if (!text) return '-';
+                return text.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0)
+                    .map(line => {
+                        let style = "margin-bottom:8px; line-height:1.5; padding-left:24px; position:relative;";
+                        let color = "inherit";
+                        let icon = "";
+                        
+                        if (line.includes('✅')) {
+                            color = "#2ecc71";
+                            icon = '<span style="position:absolute; left:0;">✅</span>';
+                            line = line.replace('✅', '').trim();
+                        } else if (line.includes('❌')) {
+                            color = "#e74c3c";
+                            icon = '<span style="position:absolute; left:0;">❌</span>';
+                            line = line.replace('❌', '').trim();
+                        } else {
+                            icon = '<span style="position:absolute; left:0; color:var(--text-sub);">•</span>';
+                        }
+
+                        return `<div style="${style} color:${color};">${icon}${line}</div>`;
+                    }).join('');
+            };
+
+            let evalHtml = '<div style="color: var(--text-sub);">尚未进行 AI 评估</div>';
+            const ev = data.evaluation;
+            if (ev && Object.keys(ev).length > 0) {
+                const qColor = ev.is_qualified ? "#238636" : "#ff4757";
+                const qBg = ev.is_qualified ? "rgba(35, 134, 54, 0.1)" : "rgba(255, 71, 87, 0.1)";
+                evalHtml = `
+                    <div style="margin-bottom:15px; display:flex; flex-wrap:wrap; align-items:center; gap:15px; background:var(--bg-secondary); padding:12px; border-radius:8px;">
+                        <div style="background: ${qBg}; color: ${qColor}; padding:6px 14px; border-radius:4px; font-weight:bold; border:1px solid ${qColor}; font-size:14px; min-width:110px; text-align:center;">
+                            ${ev.is_qualified ? '✅ 合格 (PASS)' : '❌ 不合格 (FAIL)'}
+                        </div>
+                        <div style="font-size:14px; display:flex; gap:15px; flex-grow:1;">
+                            <div>
+                                <div style="color:var(--text-sub); font-size:11px; margin-bottom:2px;">评价总分 (Weighted)</div>
+                                <span style="font-size:24px; color:var(--accent-blue); font-weight:bold;">${ev.total_score || 0}</span>
+                            </div>
+                            <div style="border-left:1px solid var(--border-color); padding-left:15px;">
+                                <div style="color:var(--text-sub); font-size:11px; margin-bottom:2px;">视觉 (70%)</div>
+                                <span style="font-size:18px; color:#fff; font-weight:600;">${ev.visual_score || 0}</span>
+                            </div>
+                            <div style="border-left:1px solid var(--border-color); padding-left:15px;">
+                                <div style="color:var(--text-sub); font-size:11px; margin-bottom:2px;">音频 (30%)</div>
+                                <span style="font-size:18px; color:#fff; font-weight:600;">${ev.audio_score || 0}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="eval-section" style="margin-bottom:15px;">
+                        <div style="color:var(--accent-blue); font-weight:bold; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                            <span style="background:var(--accent-blue); color:white; padding:2px 6px; border-radius:3px; font-size:10px;">P0</span>
+                            P0 命中评估
+                        </div>
+                        <div style="padding:10px; background:rgba(62,139,255,0.05); border-radius:6px; font-size:13px; line-height:1.6;">
+                            ${formatEvalText(ev.p0_evaluation)}
+                        </div>
+                    </div>
+
+                    <div class="eval-section">
+                        <div style="color:#1e90ff; font-weight:bold; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                            <span style="background:#1e90ff; color:white; padding:2px 6px; border-radius:3px; font-size:10px;">P1</span>
+                            P1 命中评估
+                        </div>
+                        <div style="padding:10px; background:rgba(30,144,255,0.05); border-radius:6px; font-size:13px; line-height:1.6;">
+                            ${formatEvalText(ev.p1_evaluation)}
+                        </div>
+                    </div>
+                `;
+            }
+
             let trafficHtml = '-';
             if (res.traffic_code_analysis) {
                 const tv = res.traffic_code_analysis.visual_layer_hooks || [];
@@ -502,8 +655,8 @@
             if (res.inferred_task_type) {
                 taskTypeHtml = `
                 <tr>
-                    <th style="color: #1e90ff;">任务判定</th>
-                    <td style="background-color: rgba(30, 144, 255, 0.05); font-weight: bold;">${res.inferred_task_type}</td>
+                    <th style="color: #ff9900;">任务判定</th>
+                    <td style="background-color: rgba(255, 153, 0, 0.05); font-weight: bold;">${res.inferred_task_type}</td>
                 </tr>
                 `;
             }
@@ -512,6 +665,10 @@
                 <tr>
                     <th>解耦参考点明细</th>
                     <td>${mappingHtml || '无'}</td>
+                </tr>
+                <tr>
+                    <th style="color: #3E8BFF;">结果评估</th>
+                    <td>${evalHtml}</td>
                 </tr>
                 <tr>
                     <th style="color: #ff9900;">复刻流量点分析</th>

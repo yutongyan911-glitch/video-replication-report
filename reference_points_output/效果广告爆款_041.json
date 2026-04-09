@@ -1,0 +1,65 @@
+{
+  "index": "效果广告爆款_041",
+  "zh_prompt": "参考 视频1 拍摄手法和运镜和切镜，把商品里的润肤乳变成 图片1的款式和质地，主角变成男白人20岁左右，擦完乳液后 脸变滋润了",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "保留原视频的拍摄手法、运镜和剪辑节奏，将主角替换为20岁左右的白人男性，并将使用的润肤乳替换为图片1中的理肤泉款式与质地，展示使用后皮肤变滋润的对比效果。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 保留原视频极近距离的脸部特写镜头，以及带有手持微晃感的真实拍摄运镜。"
+            ],
+            "editing_techniques": [
+              "[P0] 保留原视频的快切剪辑手法，快速切换展示使用前、涂抹中、使用后的不同画面阶段。"
+            ],
+            "subject_actions": [
+              "[P1] 保留主角用手指触碰脸部展示皮肤状态，以及将管状乳液直接挤在脸上并涂抹的动作。"
+            ],
+            "presentation_format": [
+              "[P1] 保留先展示皮肤瑕疵，接着展示涂抹产品过程，最后展示皮肤变好（滋润）的前后对比叙事结构。"
+            ]
+          },
+          "audio_layer": {
+            "dialogue_content": [
+              "[P1] 保留原视频中的旁白声音及字幕内容（如'The moisturizer that saved my face'等）。"
+            ],
+            "music_exact": [
+              "[P1] 保留原视频中带有节奏感的背景音乐。"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 提取图片中理肤泉（La Roche-Posay）润肤乳的包装款式（白色软管，带有蓝色方块和黑色字体）以及挤在脸上的白色乳霜质地。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的女性主角外观",
+        "原视频中使用的Dr. Althea品牌润肤乳包装及质地"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，主角设定为20岁左右的白人男性。采用极近距离的脸部特写和手持微晃感的运镜，配合快切剪辑节奏。视频开始展示男性的脸部皮肤状态，随后男性将理肤泉（La Roche-Posay）白色软管装的润肤乳挤在脸上，乳液呈现白色乳霜质地。最后展示男性擦完乳液后，脸部变得非常滋润、有光泽的状态。整个过程保持原视频的叙事节奏和动作逻辑。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极近距离的脸部特写直击痛点，真实展示皮肤瑕疵与改善后的强烈对比（Before & After），极大增强产品的说服力",
+        "快节奏的剪辑方式保持了紧凑的视觉张力，有效抓住观众注意力，防止划走"
+      ],
+      "audio_layer_hooks": [
+        "带有个人情感色彩和悬念的旁白（'The moisturizer that saved my face'）迅速引发有同样皮肤困扰观众的共鸣",
+        "强烈的节奏感BGM配合卡点剪辑，提升了视频的观看爽感"
+      ]
+    }
+  }
+}

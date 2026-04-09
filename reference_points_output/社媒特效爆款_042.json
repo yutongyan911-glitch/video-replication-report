@@ -1,0 +1,92 @@
+{
+  "index": "社媒特效爆款_042",
+  "zh_prompt": "参考 the video 的人物动作和切镜方式， Image 1 穿着 Image 2 分别在 Image 3 Image 4 Image 5 三个场景跳舞",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将Image 1中的女孩换上Image 2的服装，在Image 3、4、5三个场景中，复刻原视频的跳舞动作与快切转场效果生成新视频",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 视频中人物充满活力的跳舞动作序列，包括手臂挥舞、腿部跳跃及身体扭动等舞蹈姿态"
+            ],
+            "editing_techniques": [
+              "[P0] 视频中随着舞蹈动作快速切换不同背景场景的剪辑方式（无缝快切转场）"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 视频中原有的节奏感强、用于配合舞蹈卡点的欢快背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着黑色齐肩短发、面带微笑的年轻亚洲女性的面部五官特征与长相"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 黑色长袖短款上衣（胸前印有白色跑车图案及'CALIFORNIA DREAMING'等文字）与红色抽绳束脚运动长裤的服装款式、颜色及材质"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "environment": [
+              "[P0] 红色多层教学楼建筑外观，前方带有不锈钢栏杆和绿色树冠的物理背景场景"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "environment": [
+              "[P0] 两侧种满高大绿树的校园林荫大道，带有标线且略显湿润的柏油路面场景"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 5",
+          "visual_layer": {
+            "environment": [
+              "[P0] 带有白色分道线的红色塑胶田径跑道，背景包含绿草地、树木及骑车人物雕塑的场景"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的原人物长相、原服装及原背景场景",
+        "Image 1中的黄色卫衣及公园背景"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段跳舞视频。主体人物必须保持Image 1中短发亚洲女性的面部特征，并穿着Image 2中的黑色印花短上衣与红色运动长裤。人物需完全复刻the video中的舞蹈动作序列。视频需采用the video中的快切剪辑手法，将背景依次在Image 3（红色教学楼与栏杆）、Image 4（林荫大道）和Image 5（红色塑胶跑道）三个场景中进行无缝切换。保留原视频的背景音乐以匹配舞蹈节奏。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "充满活力的少女舞蹈动作",
+        "视觉冲击力强的多场景无缝快切转场",
+        "青春活泼的视觉氛围与丰富的场景变换"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强、适合卡点舞蹈的欢快背景音乐"
+      ]
+    }
+  }
+}
