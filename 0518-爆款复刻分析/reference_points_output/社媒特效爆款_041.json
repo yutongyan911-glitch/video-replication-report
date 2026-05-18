@@ -1,0 +1,68 @@
+{
+  "index": "社媒特效爆款_041",
+  "zh_prompt": "参考 the video 的转场，生成 Image 1 的视频",
+  "running_params": "{\"duration\": \"11s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将图片中的金发女性作为主体，复用原视频的卡点转场特效与音乐，生成一段从假人形态卡点变身为真实金发女性的视频",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "editing_techniques": [
+              "[P0] 配合音乐重音的闪烁快切卡点转场"
+            ],
+            "special_effects": [
+              "[P1] 主体从无脸假人瞬间变为真实人物的视觉特效"
+            ],
+            "presentation_format": [
+              "[P1] 先展示非真实形态，转场后展示真实形态的对比展示手法"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 节奏感强烈的英文BGM，带有明显的重音卡点用于配合转场"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着波浪金色长发、皮肤白皙的女性，身穿华丽的金色长裙，上半身为镶嵌水钻亮片的透视设计，下半身为丝绸质感的垂坠褶皱裙摆"
+            ],
+            "environment": [
+              "[P1] 专业的摄影棚环境，背景为灰色幕布，画面两侧放置有带有柔光箱的摄影打光灯"
+            ],
+            "visual_style": [
+              "[P1] 高清的棚拍摄影质感，立体且明亮的人物打光"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的红色背景",
+        "原视频中的黑色西装男子",
+        "原视频中的黑色无脸假人"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，背景设定为带有灰色幕布和专业打光灯的摄影棚。视频开始时展示一个穿着金色长裙的无脸假人，随后严格踩准原视频BGM的重音卡点，通过闪烁快切的转场特效，瞬间变身为Image 1中真实的金发白肤女性，保持华丽的金色长裙装扮和棚拍打光质感。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "假人变真人的强烈视觉反差",
+        "极具视觉冲击力的卡点变装",
+        "红黑配色的高级感与神秘感",
+        "高颜值人物的特写镜头"
+      ],
+      "audio_layer_hooks": [
+        "极具节奏感和爆发力的卡点音乐",
+        "烘托神秘与惊艳氛围的英文BGM"
+      ]
+    }
+  }
+}

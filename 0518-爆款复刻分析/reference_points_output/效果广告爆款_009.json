@@ -1,0 +1,52 @@
+{
+  "index": "效果广告爆款_009",
+  "zh_prompt": "以 object_1 为主体，参考 the video 视频中的运镜，构图，生成一段新的视频。",
+  "running_params": "{\"duration\": \"10s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将图集 object_1 中的女性主体与 the video 的五等分水平分屏构图及多角度景别展示手法相结合，生成一段新的视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 年轻亚洲女性，拥有精致妆容，棕色长发扎成双麻花辫，身穿黑色宽松西装外套、内搭白色衬衫、系着带有雪花水钻胸针的黑色领带，下身穿黑色百褶短裙和黑色长筒袜，留有白色长款美甲。"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 静态机位拍摄，无明显的推拉摇移运动，依赖不同机位的固定角度进行展示。"
+            ],
+            "composition": [
+              "[P0] 画面被水平分割为五个等宽的横向条带，从上到下分别展示主体的不同景别和角度：低角度特写（LOW-ANGLE CLOSE-UP）、平视高角度（EYE-ANGLE HIGH ANGLE）、极近特写（TIGHT CLOSE-UP）、四分之三侧面中景（THREE-QUARTER SIDE SHOT）、全身广角（FULL-BODY WIDE SHOT）。"
+            ],
+            "presentation_format": [
+              "[P1] 多分屏画中画同步展示，每个分屏左侧带有描述该镜头角度和景别的白色无衬线英文字母排版。"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中穿着黑色高领毛衣、戴着红色镜片墨镜的白种男子主体"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，画面采用五等分水平横向分屏构图。主体替换为指定的年轻亚洲女性（双麻花辫，穿黑色西装外套、白衬衫、带雪花胸针的黑领带、黑百褶裙和黑长筒袜）。五个分屏从上到下分别以固定机位同步展示该女性的：低角度特写、平视高角度、极近特写、四分之三侧面中景、全身广角。每个分屏左侧需保留对应的白色英文镜头术语排版文字。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉冲击力的五等分水平分屏构图，结合不同景别（特写、中景、全景）和机位角度的同步展示，配合专业的镜头术语文字排版，呈现出强烈的时尚大片质感和专业摄影教学感。"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强烈的嘻哈/说唱风格背景音乐，带有男声rap，极大地增强了视频的动感、张力和时尚潮流氛围。"
+      ]
+    }
+  }
+}

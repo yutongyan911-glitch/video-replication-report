@@ -1,0 +1,66 @@
+{
+  "index": "效果广告爆款_016",
+  "zh_prompt": "以 Image 1 为主体，参考 the video 视频中的运镜，视频效果，生成一段新的视频。",
+  "running_params": "{\"duration\": \"10s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将图片中的洗护用品作为主体，结合原视频中动感快速的推拉运镜、卡点快切剪辑以及水花飞溅等视觉特效，生成一段具有强烈节奏感的产品展示视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 三个胶囊状的洗护用品瓶子（DUET品牌，分别为绿色、黄色、粉色），表面具有高级的哑光质感"
+            ],
+            "environment": [
+              "[P1] 纯红色背景"
+            ],
+            "composition": [
+              "[P1] 物品悬浮在空中、错落有致的构图"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 极具动感的快速推拉镜头（zoom in/out），伴随镜头快速平移与轻微震动"
+            ],
+            "editing_techniques": [
+              "[P0] 配合音乐鼓点的快速剪辑（快切），带有动感模糊（motion blur）的卡点转场"
+            ],
+            "special_effects": [
+              "[P0] 物品周围爆发出水花飞溅、相关成分元素掉落或炸开的动态视觉特效"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 节奏感强、带有明显鼓点和人声的动感电子/说唱背景音乐，用于配合画面的卡点剪辑"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的易拉罐饮料主体",
+        "the video中的户外公园与白色长椅背景"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，画面主体为三个胶囊状的洗护用品瓶子（绿色、黄色、粉色，哑光质感）悬浮在纯红色背景中。应用极具动感的快速推拉运镜和镜头平移，配合强烈的节奏进行快切和卡点转场（带有动感模糊）。在镜头切换和定格时，在洗护用品瓶子周围添加水花飞溅或相关成分炸开的视觉特效。音频使用原视频中节奏感强的动感电子/说唱音乐以匹配画面的卡点效果。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉冲击力的快速推拉运镜",
+        "踩准节奏的卡点快切剪辑",
+        "动感模糊与水花飞溅特效结合带来的爽快感"
+      ],
+      "audio_layer_hooks": [
+        "洗脑且节奏感极强的电子说唱音乐",
+        "强烈的重低音鼓点提供的情绪释放感"
+      ]
+    }
+  }
+}

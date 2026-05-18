@@ -1,0 +1,82 @@
+{
+  "index": "效果广告爆款_004",
+  "zh_prompt": "参考 the video 的切镜和人物的动作，以object_1为主体，生成展示 Image 1 和Image 2 中的服饰的视频，保留原视频的背景音乐。",
+  "running_params": "{\"duration\": \"5s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "结合原视频的变装特效、动作和音乐，将主体替换为指定的亚洲女性，并让其穿戴指定的黑色墨镜与黑色西装裙。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "editing_techniques": [
+              "[P0] 视频中独特的变装特效剪辑，即服饰部件在半空中悬浮出现，随后快速飞向并穿戴在人物身上的视觉呈现方式"
+            ],
+            "subject_actions": [
+              "[P0] 人物在画面中央迎面走来，步伐自信，变装完成后双手插进衣服口袋的动作"
+            ],
+            "environment": [
+              "[P1] 灰黑色的户外柏油路面，画面带有明显的阳光直射光影与人物投射在地面上的清晰阴影"
+            ],
+            "camera_movement": [
+              "[P1] 镜头保持固定机位，主体始终处于画面中央"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 原视频中带有慵懒感和强烈鼓点节奏的英文流行背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一副黑色的长方形粗框墨镜，其核心特征是宽大的镜腿侧面镶嵌有金色的哥特式“palm”字样金属装饰"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一件剪裁挺括的黑色短袖西装裙，采用双排扣收腰设计，腰际线处点缀有两颗醒目的金色圆形浮雕纽扣，左胸配有平直口袋"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 图集中展示的年轻亚洲女性特征，包括黑色的长卷发、白皙的皮肤、柔和的五官轮廓以及清秀的面容"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的金发女性主体",
+        "原视频中的黑色星星印花T恤及黑色阔腿裤",
+        "原视频变装后的白色涂鸦连帽外套及同款长裤",
+        "原视频中的银色边框墨镜"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "提取the video中的柏油路背景、人物向前走动并双手插兜的动作、以及衣服悬空飞向人物完成变装的特效剪辑手法；将视频主体替换为object_1中的黑发亚洲女性；在变装特效中，将飞向人物并最终穿戴在身上的服饰替换为Image 1中的侧边带金色'palm'字样的黑色墨镜，以及Image 2中的带金色纽扣的黑色短袖西装裙；音频层完全复用the video的英文节奏背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉冲击力的'衣服悬空飞上身'无缝变装特效",
+        "强烈的阳光与阴影对比营造的街头高级质感",
+        "人物自信酷飒的步伐与姿态"
+      ],
+      "audio_layer_hooks": [
+        "节奏感极强、带有慵懒氛围的英文BGM，能够完美配合变装画面的视觉卡点"
+      ]
+    }
+  }
+}

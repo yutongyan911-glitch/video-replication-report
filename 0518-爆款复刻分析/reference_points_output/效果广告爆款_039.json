@@ -1,0 +1,57 @@
+{
+  "index": "效果广告爆款_039",
+  "zh_prompt": "参考 the video，生成 Image 1 的广告片",
+  "running_params": "{\"duration\": \"7s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "参考原视频的微距特写到快速拉远旋转的广告运镜手法，来展示图片中的白色无线耳机产品",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 镜头初始处于极度贴近主体的微距状态，随后迅速向后拉远，并伴随强烈的旋转效果，最终平稳停住以展示主体全貌"
+            ],
+            "composition": [
+              "[P0] 开篇为充满画面的局部特写构图，结尾转变为将主体置于画面正中央的悬浮式全景构图"
+            ],
+            "presentation_format": [
+              "[P0] 典型的产品展示广告体裁，采用“先局部细节特写，后整体形态展示”的叙事逻辑"
+            ],
+            "visual_style": [
+              "[P1] 高级商业广告质感，采用柔和且具有方向性的打光，完美勾勒出主体的边缘轮廓与表面材质光泽"
+            ],
+            "environment": [
+              "[P1] 纯净的极简渐变色背景，无任何多余物理道具或复杂场景，营造出悬浮感"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一副纯白色的入耳式真无线蓝牙耳机，包含一个呈开启状态的圆润白色充电盒，以及两枚带有黑色感应区和银色金属尾端的耳机，表面呈现光滑细腻的亮面塑料质感"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video 中的蓝色阿迪达斯运动鞋主体"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段关于白色无线耳机的商业广告视频。视频开场需对白色耳机或其充电盒的光滑材质进行极度贴近的微距特写。接着，镜头迅速向后拉远并进行旋转，最终定格，画面中心呈现打开的白色充电盒与悬浮的耳机全貌。全程采用极简的纯色渐变背景与高级商业打光，突出产品的立体感与精致光泽。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉张力的微距到全景的快速拉远旋转运镜，瞬间抓住眼球",
+        "极简纯色背景搭配悬浮构图，营造出强烈的高级感与未来科技感",
+        "细腻的材质光泽打光，极大提升了产品的质感与购买欲"
+      ],
+      "audio_layer_hooks": []
+    }
+  }
+}

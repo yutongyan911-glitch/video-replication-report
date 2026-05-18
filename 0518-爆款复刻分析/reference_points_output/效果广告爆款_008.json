@@ -1,0 +1,85 @@
+{
+  "index": "效果广告爆款_008",
+  "zh_prompt": "以 Image 1 为主体，服饰参考 object_1 中的服饰，参考 the video 视频效果，生成一段视频。",
+  "running_params": "{\"duration\": \"12s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将指定的男性主体换上图集中的前卫服饰，并套用原视频的时尚大片快切展示与特效风格生成新视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 亚洲男性主体，黑色短发，面部轮廓清晰，五官立体"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 前卫、夸张的先锋时尚服饰，如带有水钻/珍珠线条装饰的黑色套装、解构风破洞牛仔裤、带毛领的廓形西装或红黑拼接皮衣等"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 快速的推拉镜头，多角度视角的迅速切换"
+            ],
+            "composition": [
+              "[P0] 人物半身景别与局部细节（如面部、服饰细节）的特写构图"
+            ],
+            "editing_techniques": [
+              "[P0] 极具节奏感的快切剪辑，配合音乐卡点的转场"
+            ],
+            "special_effects": [
+              "[P0] 模拟相机取景框的UI特效，以及时尚杂志风格的文字叠加排版特效"
+            ],
+            "visual_style": [
+              "[P1] 高级时尚大片质感，干净极简的背景，高对比度清晰光影"
+            ],
+            "subject_actions": [
+              "[P1] 模特在镜头前进行时尚杂志风格的冷酷摆拍动作"
+            ],
+            "presentation_format": [
+              "[P1] 类似时尚大片拍摄花絮或单品展示的动态体裁"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P0] 清脆的相机快门音效，与画面中的取景框特效和剪辑点强绑定"
+            ],
+            "music_genre": [
+              "[P1] 快节奏、动感且具有时尚秀场氛围的电子背景音乐"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video 中的白人女性模特及主推的墨镜单品",
+        "Image 1 中的深灰色风衣套装及跑车街景背景",
+        "object_1 中的各路模特长相与背景"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段时尚展示视频。视觉上：主体必须是Image 1中的亚洲男性，身穿object_1中展示的前卫先锋服饰。画面需采用the video的极简背景和高级光影质感，运用快切剪辑、快速推拉镜头，在半身摆拍展示与服饰细节特写之间来回切换。必须加入相机取景框UI特效和时尚文字排版叠加。音频上：使用快节奏的电子时尚BGM，并在画面切换和取景框出现时配合清脆的相机快门音效。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉冲击力的快切剪辑",
+        "高级时尚大片质感与极简背景",
+        "取景框与文字排版特效带来的专业杂志感"
+      ],
+      "audio_layer_hooks": [
+        "动感洗脑的电子节奏",
+        "清脆的快门音效增强节奏感和时尚拍摄代入感"
+      ]
+    }
+  }
+}

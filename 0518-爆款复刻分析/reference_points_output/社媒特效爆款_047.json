@@ -1,0 +1,82 @@
+{
+  "index": "社媒特效爆款_047",
+  "zh_prompt": "参考 the video 的人物动作、音乐节奏和切镜方式，让 Image 1 中的女人站在 Image 2 的场景中，随后跳切展示 Image 1 中的女人依次换上 Image 3 中的上衣、裤子、鞋子、眼镜、手提包，随后对着镜头摆出可爱的姿势。",
+  "running_params": "{\"duration\": \"7s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将视频中的人物替换为Image 1的女性，背景替换为Image 2的电梯，保留原视频的动作、跳切剪辑和音乐节奏，并展示其依次换上Image 3中指定服饰的过程，最后摆出可爱姿势。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 视频中人物的动作序列，包括初始的站立、惊讶捂嘴，以及换装后单腿翘起、手抚摸脸颊等对着镜头摆出的可爱姿势"
+            ],
+            "editing_techniques": [
+              "[P0] 配合音乐节奏的跳切（Jump Cut）换装剪辑方式，实现瞬间服装变换的视觉效果"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 视频中原有的背景音乐，需保留其特定的节奏感以配合跳切换装"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 具有齐刘海、黑色长直发的年轻亚洲女性的面部五官特征、肤色及匀称的身形比例"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 现代感强烈的电梯内部空间，包含古铜色金属拉丝墙面、顶部矩形LED照明灯带以及背部的镜面反射效果"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 红棕白相间的条纹翻领针织长袖短上衣",
+              "[P0] 具有正面交叉开叉设计感的宽松牛仔长裤",
+              "[P0] 带有复杂纹理的白色厚底运动鞋",
+              "[P0] 浅蓝色粗边框眼镜",
+              "[P0] 带有浅蓝色手柄和拉链细节的红棕色亮面手提包"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的原女性人物面部及身形",
+        "the video中的室内房间背景",
+        "the video中的白色吊带、白色短裤、黑色露肩上衣、黑白格子裙、黑色贝雷帽等原服装及配饰",
+        "Image 1中女性原有的深蓝色牛仔外套、酒红色V领内搭、黑色紧身裤及黑色马丁靴（在换装环节被明确替换）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，背景设定为Image 2的金属质感电梯内部。主体人物为Image 1中的齐刘海长发女性。视频需使用the video的背景音乐，并严格对齐其音乐节奏。人物首先在电梯内做出the video中的站立和惊讶动作，随后采用the video中的跳切剪辑手法，随着音乐节奏卡点，让该女性依次换上Image 3中的条纹针织上衣、开叉牛仔裤、白色厚底鞋、浅蓝色眼镜和红棕色手提包。换装完成后，人物需复刻the video中的动作，对着镜头摆出可爱的姿势。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "高颜值美女的视觉吸引力",
+        "反差感极强的瞬间换装视觉冲击",
+        "修长双腿与优越身材比例的展示",
+        "卡点跳切带来的爽快节奏感"
+      ],
+      "audio_layer_hooks": [
+        "具有强节奏感和律动性的背景音乐",
+        "带有互动感的人声对白（'miss you forgot something'）增加剧情悬念"
+      ]
+    }
+  }
+}

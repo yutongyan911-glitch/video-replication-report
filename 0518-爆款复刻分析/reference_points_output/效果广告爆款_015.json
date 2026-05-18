@@ -1,0 +1,61 @@
+{
+  "index": "效果广告爆款_015",
+  "zh_prompt": "参考  the video 视频中的切镜效果，光影变化，商品展示，构图等，以 Image 1 为主体，生成一段新视频。",
+  "running_params": "{\"duration\": \"10s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "以图片中的黑色香水瓶为主体，复用视频中的快切剪辑、光影质感、微距构图和商品展示逻辑，生成一段高级质感的香水展示视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "editing_techniques": [
+              "[P0] 快速的切镜效果，包含多角度、不同景别的画面无缝衔接与快切转场"
+            ],
+            "visual_style": [
+              "[P0] 极简纯净的背景风格，配合柔和且富有层次感的高级光影变化，突出物体的材质与立体感"
+            ],
+            "presentation_format": [
+              "[P0] 专业的商品展示逻辑，从产品整体外观展示逐步过渡到极近距离的局部细节与材质质感展示"
+            ],
+            "composition": [
+              "[P0] 强烈的居中对称构图，结合极近距离的微距特写镜头，画面保持适当留白"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P1] 配合画面动作与转场的沉浸式ASMR拟音音效（如物体摩擦、接触等清脆声音）"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶纪梵希（GIVENCHY）L'INTERDIT ABSOLU香水，主体为黑色亮面材质，带有黑色瓶盖，颈部有黑色绑带与银色Logo细节，瓶身底部为透明玻璃质感"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的浅蓝色管状护肤品、包装纸盒、白色膏体、金属刮刀以及人的皮肤"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段商品展示视频。画面主体完全替换为Image 1中的黑色纪梵希香水瓶。视觉上采用the video中极简纯净的背景与柔和高级的光影变化；构图上大量使用居中对称与微距特写镜头；剪辑上运用快速切镜手法，按照从整体外观到局部细节（如瓶盖、绑带、透明底座）的逻辑进行全方位展示。可配合清脆的ASMR音效增强沉浸感。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极度舒适的微距质感特写",
+        "极简高级的视觉美学",
+        "快节奏且丝滑的切镜带来的视觉爽感"
+      ],
+      "audio_layer_hooks": [
+        "解压且沉浸感极强的ASMR音效"
+      ]
+    }
+  }
+}

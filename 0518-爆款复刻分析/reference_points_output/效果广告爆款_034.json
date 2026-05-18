@@ -1,0 +1,72 @@
+{
+  "index": "效果广告爆款_034",
+  "zh_prompt": "参考 the video，生成 Image 1 的广告片",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将原视频中作为高级时尚单品展示的“砖头”替换为“Pocky饼干盒”，复用原视频的高级感运镜、模特动作与史诗感配乐，制作一支具有反差感的高级时尚广告片。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "visual_style": [
+              "[P0] 电影级别的高级时尚广告质感，整体色调偏暖，带有复古胶片感，强调戏剧性的阳光照射与镜头光晕（Lens flare）"
+            ],
+            "subject_actions": [
+              "[P0] 模特优雅地走在街道上，随后优雅地蹲下捡起物品，将物品举到脸旁进行高级感展示（贴脸pose），最后将物品像奢侈品手拿包一样夹在身侧或拿在手中行走"
+            ],
+            "camera_movement": [
+              "[P0] 包含针对物品的微距平移特写，针对人物的低视角跟随运镜（Low-angle tracking），以及围绕人物的动态环绕运镜，配合慢动作（Slow-motion）凸显高级感"
+            ],
+            "presentation_format": [
+              "[P0] 广告体裁：先展示产品表面的极端微距细节，随后画面切远，展示模特与产品的高级感互动"
+            ],
+            "entity_subject": [
+              "[P1] 一位年轻的亚洲女性，盘发，身穿修身的白色吊带连衣裙，脚穿白色高跟鞋"
+            ],
+            "environment": [
+              "[P1] 阳光明媚的欧洲复古风情街道，地面铺满砖块，背景有复古的砖墙建筑"
+            ],
+            "composition": [
+              "[P1] 极端的微距特写构图，低角度的全身构图，以及带有强烈光影对比的半身特写构图"
+            ],
+            "editing_techniques": [
+              "[P1] 配合音乐节奏的快速切镜，以及在模特展示动作高潮时的慢动作定格处理"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 极具史诗感、气势磅礴的管弦乐/交响乐背景音乐，带有强烈的节奏感和戏剧张力"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一盒红色的格力高（Glico）Pocky巧克力涂层饼干，包装盒正面印有巨大的白色“POCKY”字样以及多根巧克力饼干条的图案"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的核心道具：红砖（被明确替换为Pocky饼干盒）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段高级时尚广告片。视觉上：采用暖色调复古电影质感与戏剧性逆光光晕。开篇使用微距镜头特写红色的Pocky饼干盒（Image 1）细节；随后切入全景，一位穿白色吊带裙的亚洲女性走在复古砖块街道上，她优雅地蹲下捡起这盒Pocky，将其贴近脸颊摆出高级时尚pose，最后像拿奢侈品手拿包一样拿着Pocky盒自信行走。全程使用低角度跟随、环绕运镜及慢动作。音频上：完全复用原视频中气势磅礴的史诗感管弦配乐，剪辑需卡点音乐节奏。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极度反差感：将极其日常、粗糙的物品（红砖）当作顶级奢侈品（如爱马仕手拿包）来对待和展示",
+        "高质量的视觉呈现：极具电影感的光影（丁达尔效应/逆光光晕）与模特极度专业、高冷的高级脸表现力形成视觉享受"
+      ],
+      "audio_layer_hooks": [
+        "宏大叙事配乐与荒诞画面的碰撞：使用史诗级、严肃磅礴的交响乐来烘托一块砖头，利用听觉与视觉的错位产生强烈的幽默感与病毒传播潜力"
+      ]
+    }
+  }
+}

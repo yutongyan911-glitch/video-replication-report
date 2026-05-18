@@ -1,0 +1,73 @@
+{
+  "index": "效果广告爆款_018",
+  "zh_prompt": "参考 the video 视频效果，生成一段主体为 Image 1 ，Image 2，Image 3 的视频。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将视频中网球场上弹跳的化妆品模型替换为用户提供的三款香水，保持原视频的超现实夏日网球场场景与巨大化物品弹跳的动画效果。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "visual_style": [
+              "[P0] 3D超现实主义风格，色彩鲜艳明快，以高饱和度的粉色、蓝色和绿色为主色调，充满夏日多巴胺度假质感"
+            ],
+            "environment": [
+              "[P0] 一个粉色和蓝色相间的露天网球场，场地周围环绕着茂密的绿色灌木丛，背景是晴朗的蓝天和高大的棕榈树，场地上散落着粉色的巨大网球和一把带有粉色遮阳伞的裁判椅"
+            ],
+            "subject_actions": [
+              "[P0] 巨大的产品模型在网球场上像网球一样进行富有弹性的来回弹跳、滑动和移动"
+            ],
+            "camera_movement": [
+              "[P1] 固定的全景机位，清晰完整地展示网球场全貌以及巨大化主体的运动轨迹"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶香水，具有透明的竖条纹圆柱形玻璃瓶身，正面贴有带金色编织边框的白色椭圆形浮雕标签（带有飞马图案和BEAST字样），顶部配有白色花苞形状的瓶盖"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶香水，具有磨砂质感的浅蓝色竖条纹圆柱形瓶身，顶部是白色的精致雕花圆顶瓶盖，瓶颈处挂着一条银色编织链条，连接着一个银色椭圆形金属吊牌（印有LONGDEBAI字样）"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶香水，具有透明的方形厚底玻璃瓶身，内含浅绿色液体，正面贴有金色方形反光标签（印有THÉ YULONG ARMANI/PRIVE字样），顶部配有巨大的黑色不规则鹅卵石形状瓶盖"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中原有的红色尖头瓶子、紫色软管、黑色软管等化妆品/护肤品模型"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段3D超现实主义风格的夏日视频。场景设定为一个粉蓝相间的露天网球场，四周有绿色灌木丛和棕榈树。将网球场上的运动主体替换为三款巨大的香水瓶（分别对应Image 1的透明竖条纹花苞盖香水、Image 2的浅蓝色磨砂雕花盖香水、Image 3的方形绿液黑盖香水）。这三款巨大的香水瓶在网球场上像网球一样进行富有弹性的来回弹跳和移动。采用固定全景机位拍摄，呈现出色彩鲜艳的多巴胺视觉效果。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "超现实主义的巨大化日常物品",
+        "高饱和度多巴胺撞色美学（粉蓝绿强对比）",
+        "充满夏日度假氛围的场景构建",
+        "趣味性的物品拟人化运动（产品打网球的奇观）"
+      ],
+      "audio_layer_hooks": []
+    }
+  }
+}

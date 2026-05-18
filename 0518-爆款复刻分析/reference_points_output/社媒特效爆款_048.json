@@ -1,0 +1,75 @@
+{
+  "index": "社媒特效爆款_048",
+  "zh_prompt": "参考 the video 的人物动作、音乐节奏、场景和切镜方式，让 Image 1 中的女人的衣服变装为 Image 2 中的衣服。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将原视频中的主角替换为Image 1中的长发女孩，保留原视频的场景、动作、音乐和卡点转场方式，并实现从Image 1的校服到Image 2深蓝色棉服的变装效果。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "environment": [
+              "[P0] 变装前明亮的室内环境（包含米色沙发、反光玻璃桌、大熊玩偶等）",
+              "[P0] 变装后带有边框的昏暗室内背景"
+            ],
+            "subject_actions": [
+              "[P0] 变装前坐在桌前用笔写字、随后双手将纸张从中间撕开的动作",
+              "[P0] 变装后单手扶着上方边框、身体微侧的定格姿势"
+            ],
+            "editing_techniques": [
+              "[P0] 配合音乐重音的快速卡点转场剪辑方式"
+            ],
+            "special_effects": [
+              "[P0] 撕开纸张瞬间触发的画面震动与快速变装视觉特效"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 原视频中带有强烈节奏感、用于配合变装卡点的动感BGM"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 拥有长直发、清纯五官的年轻亚洲女性面部特征及发型",
+              "[P0] 变装前穿着的白色带领短袖校服（带有蓝色滚边和胸前徽章）"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 深蓝色、带有黑色毛领兜帽、正面有金属按扣的厚实绗缝棉服外套（作为变装后的服饰）"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中原人物的面部特征、金色短发、黑色T恤及黑色无袖紧身衣",
+        "Image 1中的学校操场及背景人物"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段变装视频，主角替换为Image 1中的长发女孩。前半段女孩身穿Image 1中的白色校服，处于the video前半段的明亮室内场景中，执行在桌前写字并撕开纸张的动作；在撕纸瞬间，严格对齐the video的原版BGM进行卡点转场，触发变装特效；后半段场景切换为the video后半段的昏暗背景，女孩瞬间换上Image 2中的深蓝色棉服外套，并摆出原视频变装后的单手扶框姿势。全程需完美复刻the video的音乐节奏与切镜方式。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具反差感的变装设计（从日常居家到精致造型）",
+        "撕纸动作作为转场触发点的创意互动",
+        "卡点快切带来的强烈视觉冲击力"
+      ],
+      "audio_layer_hooks": [
+        "节奏感极强的重低音BGM",
+        "与视觉转场完美契合的卡点音效，营造极度舒适的视听爽感"
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "index": "效果广告爆款_023",
+  "zh_prompt": "以 object_1 为主体，参考 the video 视频中的动作效果，生成一段新的视频，生成文字为：“Frito-Lay”。",
+  "running_params": "{\"duration\": \"7s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "保留原视频中撕开红色纸张的动作与音效，将撕开后露出的物品替换为图集中的薯片包装袋，并将包装袋上的文字修改为“Frito-Lay”",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 一只手捏住红色的纸张/布料，用力将其撕开的连贯动作"
+            ],
+            "composition": [
+              "[P1] 俯视特写镜头，画面由满屏的红色遮挡物逐渐过渡到内部展示物"
+            ],
+            "presentation_format": [
+              "[P1] 悬念揭晓式的展示手法，先隐藏主体，通过撕开的动作展现内部物品"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P0] 纸张/布料被撕开时产生的清脆、连续的摩擦与撕裂声"
+            ]
+          }
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 黑底绿字设计的薯片包装袋，周围散落着金黄色的波浪纹薯片，放置在深灰色的石板背景上"
+            ],
+            "visual_style": [
+              "[P1] 具有高对比度、清晰质感和暗调背景的商业产品摄影风格"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中红色纸张下方排列的多条宝石手链",
+        "object_1薯片包装袋上原有的'KLING'等主视觉文字"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，画面以俯视特写视角开始，一只手撕开红色的纸张/布料，音频同步播放清脆的撕裂声。随着红色遮挡物被撕开，露出下方深灰色石板上放置的一包黑底绿字薯片，包装袋上的核心文字需生成为“Frito-Lay”，包装袋周围散落着波浪纹薯片，整体保持高对比度的商业质感。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "撕开遮挡物带来的“开盲盒”式悬念揭晓感",
+        "高饱和度红色遮挡物与内部精美物品之间形成的强烈视觉反差"
+      ],
+      "audio_layer_hooks": [
+        "具有ASMR属性的清脆撕纸声，能有效吸引注意力并提供解压的听觉体验"
+      ]
+    }
+  }
+}

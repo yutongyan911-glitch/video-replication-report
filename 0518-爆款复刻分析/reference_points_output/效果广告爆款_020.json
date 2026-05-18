@@ -1,0 +1,102 @@
+{
+  "index": "效果广告爆款_020",
+  "zh_prompt": "参考 the video 视频效果，生成一段主体为 Image 1 ,服饰参考 Image 2 ，Image 3，Image 4，Image 5 的视频。",
+  "running_params": "{\"duration\": \"12s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "用户希望以原视频的UI交互式换装特效为模板，将视频主体替换为指定的男性模特，并依次换上指定的帽子、皮衣、皮裤和皮包。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "special_effects": [
+              "[P0] 鼠标指针拖拽衣物图标到人物身上实现瞬间换装的视觉特效，以及将衣物拖入垃圾桶图标脱下衣物的特效"
+            ],
+            "presentation_format": [
+              "[P0] 类似电脑桌面UI交互的展示形式，画面左上角有衣物图标窗口，通过鼠标指针操作进行换装展示"
+            ],
+            "environment": [
+              "[P1] 室内环境，背景有浅蓝色双人沙发、灰色窗帘和墙上的几何图案艺术挂画"
+            ],
+            "subject_actions": [
+              "[P1] 人物站立在画面中央，随着衣物的添加或移除，身体姿态保持相对静止，配合换装特效"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P0] 鼠标点击、拖拽以及换装瞬间的音效"
+            ],
+            "music_exact": [
+              "[P1] 视频中原有的动感节奏背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一位留着棕色短发、身材健硕、肌肉线条明显的白种男性，穿着黑色平角内裤"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一顶深棕色的牛仔帽，帽檐两侧卷曲，帽身带有银色雕花金属搭扣和水钻刺绣装饰"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一件做旧风格的黑色短款机车皮夹克，带有不对称拉链、下摆腰带和多处金属扣件及绑带设计"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一条黑色的皮质阔腿套裤，带有拉链、腰带、拼接护膝设计和侧边流苏装饰"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 5",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一个深棕色的复古皮质单肩包，带有多个外部翻盖口袋、金属搭扣和银色猫咪造型挂件"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的长发女性主体",
+        "the video中的棕色长袖上衣、灰色阔腿裤、灰色连帽外套、黑色托特包、头戴式耳机"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，背景为带有浅蓝色沙发和灰色窗帘的室内环境。画面中央站立着Image 1中的健硕白人男性（仅穿黑色内裤）。采用类似电脑桌面的UI交互形式，通过鼠标指针拖拽图标的视觉特效，依次为该男性换上Image 2的深棕色牛仔帽、Image 3的做旧黑色皮夹克、Image 4的黑色皮质阔腿裤和Image 5的深棕色皮包。换装过程中人物保持相对静止。音频需保留原视频的动感背景音乐，并精准卡点鼠标点击、拖拽及换装瞬间的音效。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "创意的电脑桌面UI交互式换装特效",
+        "视觉冲击力强的瞬间变装过程",
+        "身材姣好的模特展示"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强的背景音乐",
+        "清脆且极具交互感的鼠标点击与拖拽音效，增强了观看的爽感"
+      ]
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "index": "效果广告爆款_005",
+  "zh_prompt": "将 the video 中的女人替换为 object_1 ，保持 the video 中人物的动作和周围运动效果。",
+  "running_params": "{\"duration\": \"6s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将视频中的女主角替换为指定的亚洲女性图集形象，同时保留原视频的人物动作、背景环境及背景动态模糊特效。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "environment": [
+              "[P0] 巴黎风格的街道，两侧为古典建筑，背景有行驶的汽车和行人"
+            ],
+            "subject_actions": [
+              "[P0] 人物站在街道中央，直视镜头，保持静止站立的姿态"
+            ],
+            "special_effects": [
+              "[P0] 背景呈现强烈的动态模糊（运动模糊）效果，营造出周围事物快速移动、时间流逝的视觉冲击"
+            ],
+            "visual_style": [
+              "[P1] 偏冷色调的时尚街拍风格"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 节奏感强的说唱/流行背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 年轻的亚洲女性，扎着高马尾，留着空气刘海，身穿黑色短款长袖牛仔外套，内搭白色露脐吊带，下穿深蓝色破洞微喇牛仔裤，脚踩白色厚底运动鞋，佩戴黑色心形项链和银色耳环"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中穿着卡其色风衣、腰间系着灰色衣服、戴着黑色帽子和墨镜的白人女性"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "将原视频中的主体人物替换为object_1中的亚洲女性（高马尾、黑色短款牛仔外套、白色露脐内搭、深蓝色破洞牛仔裤、白色厚底鞋）。保持人物在街道中央静止站立的动作，保留原视频的巴黎街道背景以及背景中强烈的动态模糊（时间流逝）特效，保留原视频的背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "主体绝对静止与背景强烈动态模糊形成的'时间静止'视觉反差",
+        "极具时尚感的冷色调街拍质感"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强、极具态度的流行说唱BGM，完美契合酷飒的街拍氛围"
+      ]
+    }
+  }
+}

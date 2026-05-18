@@ -1,0 +1,113 @@
+{
+  "index": "社媒特效爆款_043",
+  "zh_prompt": "参考 the video 的人物动作、音乐节奏和切镜方式，让 Image 1 的男人和 Image 2 的女人先在 Image 5 的场景中，随后切镜转场到 Image 6 的场景中，Image 1 的男人变为穿着 Image 3 的衣服， Image 2 的女人变为穿着 Image 4 的衣服，随后再切镜转场到 Image 7 的场景中。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "提取原视频的动作、音乐和卡点切镜转场，将指定的男女主角置于三个不同的指定场景中，并在场景切换时完成从古装到现代装的换装。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 两个人物面对面站立，进行手部互动、击掌，随后转身面向镜头展示舞蹈动作"
+            ],
+            "editing_techniques": [
+              "[P0] 配合音乐节拍的快速切镜转场，实现场景和服装的瞬间无缝切换"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 原视频中动感、节奏感强的流行背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着黑色长发、头戴发冠、五官清秀的年轻男子，初始穿着带有白色内衬和刺绣的浅蓝色古风长袍"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 梳着古风盘发、佩戴发饰、五官温婉的年轻女子，初始穿着浅绿色古风交领长裙"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一件深蓝色的连帽羽绒服/棉服，带有黑色毛领和金属按扣（作为男子的第二套服装）"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一件蓝色的短袖衬衫式连衣裙，带有同色系腰带和纽扣（作为女子的第二套服装）"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 5",
+          "visual_layer": {
+            "environment": [
+              "[P0] 阳光透过树叶洒下的古风青砖庭院，角落有盆栽绿植，墙上有木制双开门"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 6",
+          "visual_layer": {
+            "environment": [
+              "[P0] 现代温馨的咖啡馆或餐厅室内，配有木质餐桌椅、吧台、暖色调灯光以及墙面和天花板的绿植装饰"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 7",
+          "visual_layer": {
+            "environment": [
+              "[P0] 现代城市街边店铺外观，左侧是红白配色的'蜜雪冰城'门店，右侧是黑白配色的'luckin coffee 瑞幸咖啡'门店，门前有灰白相间的地砖"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中原有的两个女孩的长相与穿着",
+        "the video中原有的室内白墙背景、夜景古建筑背景及走廊背景",
+        "Image 1男子在第一幕之后的古装服饰",
+        "Image 2女子在第一幕之后的古装服饰"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段包含三幕的视频，全程使用the video的背景音乐，人物动作完全复刻the video中的双人舞蹈与互动，并保留其卡点切镜的转场方式。第一幕：在Image 5的古风庭院中，Image 1的男子（穿原图蓝色古装）与Image 2的女子（穿原图浅绿色古装）进行互动。第二幕：随着音乐卡点切镜，场景瞬间变为Image 6的现代咖啡馆，男子换装为Image 3的深蓝色羽绒服，女子换装为Image 4的蓝色连衣裙，继续舞蹈动作。第三幕：再次卡点切镜，场景变为Image 7的街边店铺（蜜雪冰城与瑞幸），男女主保持第二幕的现代服装继续完成剩余动作。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "高颜值双人闺蜜/情侣互动",
+        "极具视觉冲击力的卡点变装与场景转场",
+        "古风与现代的强烈视觉反差"
+      ],
+      "audio_layer_hooks": [
+        "动感洗脑的流行舞曲BGM",
+        "强烈的节奏卡点"
+      ]
+    }
+  }
+}

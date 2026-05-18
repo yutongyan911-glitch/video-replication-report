@@ -1,0 +1,102 @@
+{
+  "index": "经典影视_100",
+  "zh_prompt": "复刻 the video 的战斗动作、音效和分镜，把 the video 中的拿长枪的人物当作 Image 1 ，把 the video 中穿绿色衣服的人物当作 Image 2 ，生成在 Image 4 中， Image 1 和手拿 Image 3 的 Image 2 打斗的视频。",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将原视频的战斗动作、分镜和音效，套用到由多张图片指定的新人物、新武器和新科幻场景中，生成全新的写实科幻战斗视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 两个人物之间激烈、快节奏的武术格斗动作，包括持武器冲刺、跳跃劈砍、转身格挡、近身踢踹等连贯招式"
+            ],
+            "composition": [
+              "[P0] 极具张力的战斗分镜，包含全景的对峙、动作特写、夸张的透视角度以及快速的镜头切换"
+            ],
+            "camera_movement": [
+              "[P0] 配合人物战斗动作的快速推拉摇移，以及跟随武器挥舞轨迹的动态运镜"
+            ],
+            "special_effects": [
+              "[P1] 武器碰撞时产生的耀眼火花、刀光剑影的拖尾光效，以及人物快速移动带起的烟尘和气流特效"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P0] 密集的武器挥舞破空声、清脆的金属碰撞声、沉重的脚步声以及人物发力时的呼喝声"
+            ],
+            "music_exact": [
+              "[P1] 节奏紧凑、带有紧张感的战斗背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着黑色齐耳短发、面容精致的年轻女性，身穿银色与淡黄色相间的充满科技感的紧身战斗服"
+            ],
+            "environment": [
+              "[P1] 手持一把银色金属质感的长枪，枪杆带有黄色飘带"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着黑色长直发、面容冷峻的年轻女性，身穿银色亮面短款夹克、黑色紧身内搭、黑色紧身长裤和黑色短靴"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "environment": [
+              "[P0] 一把中国传统风格的长剑，剑身修长锋利，剑柄和护手带有精美的金色雕花装饰"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "environment": [
+              "[P0] 浩瀚的外星荒漠场景，地面是红褐色的岩石和沙土，天空中悬挂着一颗巨大的红色星球，并伴有绚丽的紫色和蓝色星云"
+            ],
+            "visual_style": [
+              "[P1] 具有科幻史诗感的写实CG渲染画风，色彩对比强烈"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中手持长枪的古代男性人物外观",
+        "原视频中身穿绿衣、头戴斗笠的古代人物外观",
+        "原视频中的木桥及云雾缭绕的山水背景",
+        "原视频中绿衣人物所使用的刀类武器",
+        "原视频的2D手绘动画画风"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "以科幻写实CG画风，生成一段两名女性在外星荒漠中激烈战斗的视频。场景设定为红褐色岩石地貌的外星荒漠，天空有巨大红色星球和紫蓝色星云（参考Image 4）。战斗双方为：一方是短发、穿银黄相间紧身战斗服的女性（参考Image 1），手持银色长枪；另一方是长发、穿银色夹克和黑色紧身裤的女性（参考Image 2），手持带有金色雕花的长剑（参考Image 3）。完全复刻原视频（the video）中两人从冲刺、交锋到近身格斗的整套动作连招，并严格保持原视频的运镜轨迹、分镜构图及快切节奏。保留原视频中武器碰撞的火花特效及气流烟尘。音频方面，完全对齐原视频的武器碰撞声、挥舞破空声、脚步声及背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具张力的2D国风武侠战斗动画表现",
+        "行云流水的攻防转换与硬核的武术动作设计",
+        "配合动作的夸张透视与极具冲击力的动态运镜"
+      ],
+      "audio_layer_hooks": [
+        "刀剑相交时清脆且高频的金属碰撞声，极具爽感",
+        "配合快节奏画面的紧凑鼓点BGM，有效烘托紧张刺激的战斗氛围"
+      ]
+    }
+  }
+}

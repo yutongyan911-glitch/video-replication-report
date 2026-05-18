@@ -1,0 +1,52 @@
+{
+  "index": "效果广告爆款_019",
+  "zh_prompt": "以 object_1 为主体，参考 the video 视频中的视频效果，生成一段新的视频。",
+  "running_params": "{\"duration\": \"7s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "将原视频中的粉色护肤品替换为用户提供的棕色香水瓶，并保留丝带环绕飘动的动态视觉特效",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "special_effects": [
+              "[P0] 一条粉色丝带在主体周围自下而上、轻盈且流畅地环绕飘动的动态视觉特效"
+            ],
+            "environment": [
+              "[P1] 纯粉色背景，底部为带有清晰倒影的光滑展示台面"
+            ],
+            "composition": [
+              "[P1] 主体居中放置的正面特写构图"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 棕色半透明的方形玻璃香水瓶，带有八角形瓶盖，瓶身正面印有金色的'HARVEST'和'Vanessa Megan'字样"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的粉色方形BYOMA护肤品瓶子"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "在纯粉色背景和带有倒影的光滑台面上，居中放置一个棕色半透明方形香水瓶（带八角形瓶盖，印有HARVEST字样）。生成一条粉色丝带在香水瓶周围自下而上流畅环绕飘动的动态视频效果。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "丝带环绕的丝滑动态效果带来高级感",
+        "极简纯色背景与高饱和度色彩形成强烈的视觉冲击力",
+        "底部倒影增加画面的空间感与产品质感"
+      ],
+      "audio_layer_hooks": []
+    }
+  }
+}

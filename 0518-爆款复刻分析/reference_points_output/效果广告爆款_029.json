@@ -1,0 +1,71 @@
+{
+  "index": "效果广告爆款_029",
+  "zh_prompt": "参考 the video 视频效果，广告内容参考 Image 1 ，其中文字为iPhone 17 Pro，Concept Inspired By Two lconic Designs,the iPhone X and iPhone 16 Pro，人物替换为 object_1 中的角色，内容轻微更改，变为 object_1 走到屏幕面前，按屏幕，随后 Image 1 慢慢旋转 落入 object_1 的手中， object_1 拿起 Image 1，做打电话的动作，随后走向屏幕，展示 Image 1 的正面，反面和侧面。",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "用户希望将原视频中的人物替换为指定的绿发西装男子，将广告牌内容及掉落物品替换为指定的概念手机并添加特定文案，同时修改人物获取物品后的动作，展示手机细节。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "environment": [
+              "[P0] 街道旁带有大型嵌入式数字广告屏幕的建筑外墙，屏幕下方有一个金属取物槽的物理背景"
+            ],
+            "special_effects": [
+              "[P0] 人物点击屏幕后，屏幕上的虚拟物品转化为真实物品掉落的视觉特效逻辑"
+            ],
+            "visual_style": [
+              "[P1] 真实的街拍质感与自然光照色彩"
+            ],
+            "camera_movement": [
+              "[P1] 固定机位拍摄，保持全景到中景的构图"
+            ]
+          },
+          "audio_layer": {
+            "ambient_sound": [
+              "[P1] 街道的自然环境底噪与人物走动的脚步声"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 银色外观的智能手机，背面左上角有独特的横向排列三摄模组，正面为全面屏"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着绿色爆炸头、戴着红蓝3D眼镜、留着胡须的男子，身穿深蓝色带彩色链条花纹的西装套装，内搭浅绿色衬衫和粉色领结，脚穿黑色皮鞋"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中穿黑色衣服戴墨镜的男子",
+        "原视频屏幕上的Prada包广告及文字",
+        "原视频中掉落的Prada包"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，背景为街道旁带有大型数字广告屏幕的建筑外墙。屏幕上显示银色智能手机（背面横向三摄）的广告，配文'iPhone 17 Pro, Concept Inspired By Two lconic Designs, the iPhone X and iPhone 16 Pro'。一个留着绿色爆炸头、戴红蓝3D眼镜、穿深蓝色花纹西装的男子走到屏幕前按下屏幕。随后触发特效，屏幕中的手机慢慢旋转并真实落入男子手中。男子拿起手机做打电话动作，随后走向镜头，向镜头展示手机的正面、反面和侧面。保持真实街拍质感和固定机位。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "打破次元壁的O2O虚拟现实交互特效（点击屏幕掉出实物）",
+        "街头巨幕广告牌带来的视觉冲击力"
+      ],
+      "audio_layer_hooks": [
+        "真实的街道环境底噪与清脆的物理交互声，增强沉浸感"
+      ]
+    }
+  }
+}

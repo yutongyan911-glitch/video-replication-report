@@ -1,0 +1,71 @@
+{
+  "index": "效果广告爆款_026",
+  "zh_prompt": "使用 Image 1 和 Image 2 ，参考 the video 视频效果，生成一段新的视频。",
+  "running_params": "{\"duration\": \"9s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "以Image 1和Image 2的内容为视觉主体，复用the video的黑白转彩色特效、剪辑节奏及背景音乐生成新的视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "visual_style": [
+              "[P0] 画面由黑白瞬间切换为彩色的视觉特效"
+            ],
+            "editing_techniques": [
+              "[P0] 配合音乐节奏的瞬间色彩突变转场",
+              "[P1] 视频结尾切换至纯色背景展示品牌Logo及信息的剪辑方式"
+            ],
+            "presentation_format": [
+              "[P1] 先展示产品主体并浮现文字，最后切入品牌信息页的广告展示逻辑"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 节奏感强烈的说唱/Rap风格背景音乐"
+            ],
+            "dialogue_content": [
+              "[P1] 视频开头的人声说唱内容"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 红色的方形护肤品包装盒，上方叠放的红色螺旋状眼霜瓶子，以及右侧带刺的玫瑰花茎"
+            ],
+            "visual_style": [
+              "[P1] 偏暗调、凸显红色产品光泽与质感的高级静物摄影风格"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 黄底黑字的平面设计排版，包含大写的变形字母'A'logo，以及'30 BEST MONOGRAM LOGO DESIGNS YOU SHOULD CHECK'等文字内容"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "将Image 1中的红色护肤品套装与玫瑰花茎，以及Image 2中的黄底黑字排版设计作为视觉主体。应用the video中的视觉特效，使画面初始为黑白，随后瞬间突变为彩色。采用the video的剪辑手法，在结尾处切入品牌信息展示页。音频方面，完全复用the video中带有说唱人声且节奏感强烈的背景音乐，并使画面的色彩突变与音乐节奏卡点契合。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "黑白到彩色的瞬间视觉突变制造强烈的反差感与视觉冲击力",
+        "结尾清晰的黑底白字品牌信息展示，提升品牌记忆度"
+      ],
+      "audio_layer_hooks": [
+        "动感洗脑的说唱音乐配合画面卡点，极具节奏感，有效提升用户完播率"
+      ]
+    }
+  }
+}

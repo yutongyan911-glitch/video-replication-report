@@ -1,0 +1,60 @@
+{
+  "index": "效果广告爆款_024",
+  "zh_prompt": "以 Image 1 为主体，参考 the video 视频中的视频效果，生成一段新的视频，效果变为冰淇淋缓缓落下，并将背景换为冰淇淋机的正面，文字为：“FOODOGPAHYHG！”",
+  "running_params": "{\"duration\": \"12s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "以图片中的冰淇淋为主体，复用原视频左右分屏（左静右动）的视觉特效，将右侧动态改为冰淇淋缓缓落下，同时替换背景为冰淇淋机正面，并修改画面文字。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "special_effects": [
+              "[P0] 左右分屏的视觉特效，画面左半部分保持静态，右半部分展示动态过程"
+            ],
+            "composition": [
+              "[P1] 主体位于画面中央，画面上方居中排布醒目的粗体文字"
+            ],
+            "presentation_format": [
+              "[P1] 以左右对比的形式同时展示食物的静态成品与动态生成过程"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 带有强烈节奏感和刮碟音效的动感嘻哈风背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 顶端带有尖角弯曲、呈现完美旋转纹理的白色奶油冰淇淋，以及底部的浅棕色网格状华夫脆筒"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的汉堡主体及其制作过程的食材（生菜、炸鸡、酱料等）",
+        "原视频中模糊的餐厅背景",
+        "原视频中的'TERI-FRICKEN-YAKI BURGER'文字及结尾出现的品牌logo"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，主体替换为带有旋转纹理的白色甜筒冰淇淋。画面采用左右分屏特效，左半部分为静态的冰淇淋成品，右半部分展示冰淇淋缓缓落下的动态过程。将背景设定为冰淇淋机的正面。画面上方居中显示醒目的粗体文字'FOODOGPAHYHG！'。音频层保留原视频的动感背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "左右分屏对比的创意视觉形式",
+        "一半静态一半动态的强烈视觉反差",
+        "食物动态生成过程带来的解压感与诱人感"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强烈的背景音乐",
+        "带有刮碟音效的复古动感元素，有效增强画面的节奏感与吸引力"
+      ]
+    }
+  }
+}

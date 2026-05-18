@@ -1,0 +1,88 @@
+{
+  "index": "社媒特效爆款_059",
+  "zh_prompt": "参考 the video 的人物动作、音乐、运镜节奏和手部遮挡的切镜方式，让 Image 1 中的女人在 Image 2 的场景中背对镜头向前走，随后切镜转场为 Image 3 中的女人在海滩边上向前行走。",
+  "running_params": "{\"duration\": \"9s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "提取原视频的运镜、转场手法和音乐，将三张图片的人物与场景进行融合，生成一段带有手部遮挡转场效果的跨场景行走视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 画面中人物背对镜头向前行走的动作",
+              "[P0] 第一人称视角下，一只手伸向镜头并完全遮挡画面的动作"
+            ],
+            "camera_movement": [
+              "[P0] 镜头跟随人物向前平稳推进的运动节奏"
+            ],
+            "editing_techniques": [
+              "[P0] 利用手部完全遮挡镜头作为过渡的切镜转场手法"
+            ],
+            "composition": [
+              "[P1] 第一人称视角的跟随构图"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 原视频中节奏动感的女声流行歌曲BGM"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 留着微卷长发、面容清秀的年轻女孩，身穿带有蓝色条纹点缀的白色短袖翻领校服"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "environment": [
+              "[P0] 现代简约风格的明亮室内客厅，包含米白色布艺沙发、圆形小茶几、灰色电视背景墙、暖色调灯光以及角落的绿植"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 披散着长发的女孩，身穿灰色多层薄纱吊带长裙，左手提着裙摆，右手持着一束白花，光着脚"
+            ],
+            "environment": [
+              "[P0] 阳光明媚的开阔海滩，脚下是湿润的沙滩和白色的海浪，背景是蔚蓝的大海和远处的城市建筑群天际线"
+            ],
+            "subject_actions": [
+              "[P0] 光脚在沙滩上背对镜头向前行走的动作"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中的白裙女孩和红裙古装女子",
+        "the video中的室内走廊和古建筑走廊场景",
+        "Image 1中的学校操场背景"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段带有手部遮挡转场效果的视频。前半段：让Image 1中的白校服长发女孩置身于Image 2的现代简约客厅中，背对镜头向前走。随后，一只手伸向镜头并完全遮挡画面进行切镜转场。后半段：转场结束后，画面变为Image 3中的灰裙女孩在海滩上背对镜头向前走。全程保持the video中跟随人物推进的运镜节奏，并完全复用the video中的动感女声BGM。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "第一人称视角的强代入感",
+        "手部遮挡镜头的无缝丝滑转场",
+        "现代白裙到古装红裙的强烈视觉反差与变装效果"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强烈的动感女声BGM，极具洗脑和带动情绪的效果"
+      ]
+    }
+  }
+}

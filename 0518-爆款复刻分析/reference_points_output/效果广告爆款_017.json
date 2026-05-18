@@ -1,0 +1,91 @@
+{
+  "index": "效果广告爆款_017",
+  "zh_prompt": "参考 the video 视频运镜效果，生成一段主体为 Image 1 ，Image 2，Image 3，Image 4 的视频。",
+  "running_params": "{\"duration\": \"9s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "用户希望以原视频的卡点跳切展示节奏和固定机位为模板，将视频中的展示主体替换为提供的四款香水/香氛瓶图片。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 保持固定机位（Static Camera），无明显的推拉摇移，将视觉焦点完全集中在画面正中央的主体展示区域"
+            ],
+            "editing_techniques": [
+              "[P0] 运用硬切/跳切（Jump Cut）或定格动画式的剪辑手法，使主体物品在画面中央瞬间出现、无缝切换或消失，形成强烈的视觉卡点节奏"
+            ],
+            "presentation_format": [
+              "[P1] 采用极简的纯色/暖色渐变背景，居中展示物品，突出主体的轮廓与质感"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 保留原视频中节奏感强烈的电子流行背景音乐"
+            ],
+            "sound_effects": [
+              "[P1] 保留原视频中配合动作和物品出现的清脆卡点音效（如拍手声、清脆的打击声）"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一款透明玻璃香水瓶，配有黑色圆柱形瓶盖，瓶身印有黑色的 'QUEENS & MONSTERS', 'HENRY ROSE', 'EAU DE PARFUM' 字样，瓶内装有浅黄色液体"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一款装有绿色液体的香氛瓶，配有深棕色木质纹理的圆柱形瓶盖，瓶身贴有复古黄色方形标签，印有 'NECTAR AMBRÉ', 'HOME FRAGRANCE'，瓶身下半部分带有竖条状凹凸玻璃纹理"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一款透明玻璃香水瓶，配有白色倒置花苞形状的瓶盖和金色金属颈部，瓶身正面镶嵌有带金色麻花边缘的椭圆形白色浮雕（图案为神兽与植物），瓶身整体带有密集的竖条状凹凸纹理"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一款浅蓝色磨砂质感的香水瓶，配有白色精致雕花圆顶瓶盖，瓶颈处缠绕并悬挂着一条银色编织链条，末端带有椭圆形银色金属吊牌（印有 'LONGDEBAI' 及相关字样），瓶身带有竖条状凹凸纹理"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的人物手臂及佩戴的白色镂空表带手表",
+        "原视频中的绿色 Mary Kay 护手霜/乳液",
+        "原视频结尾出现的 'MARY KAY' 黑色品牌文字"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "保持原视频的固定机位与暖色渐变极简背景，复用原视频的跳切/定格剪辑手法与卡点节奏。将画面中央的主体依次替换为 Image 1、Image 2、Image 3、Image 4 中的四款香水/香氛瓶，让这四款产品随着原视频的动感BGM和清脆音效，在画面中央瞬间出现并依次切换展示。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极简背景下的高对比度视觉聚焦",
+        "跳切卡点带来的视觉爽感与节奏感",
+        "物品凭空出现的魔术般视觉特效"
+      ],
+      "audio_layer_hooks": [
+        "节奏感极强的洗脑电子BGM",
+        "清脆悦耳、具有ASMR属性的动作触发音效（拍手、卡点声）"
+      ]
+    }
+  }
+}

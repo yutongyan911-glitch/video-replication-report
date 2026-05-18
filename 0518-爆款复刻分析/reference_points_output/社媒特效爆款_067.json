@@ -1,0 +1,79 @@
+{
+  "index": "社媒特效爆款_067",
+  "zh_prompt": "参考 the video 的剧情内容，将 the video 的白猫换成 Image 1 中的女人，将灰猫换成 Image 2 中的女人。",
+  "running_params": "{\"duration\": \"13s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "保留原视频的剧情对话与场景动作，将视频中的白猫替换为Image 1中的金发女医生，灰猫替换为Image 2中的丧尸女。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 左侧主体先进行说话，随后仰头夸张大笑；右侧主体先转头倾听，随后突然伸出手打向左侧主体的头，最后两者倒在地上扭打在一起"
+            ],
+            "environment": [
+              "[P1] 室内明亮的客厅环境，背景有灰色现代沙发、大面积落地窗、阳光光影以及浅色地毯"
+            ],
+            "camera_movement": [
+              "[P1] 固定机位拍摄，无明显镜头运动"
+            ],
+            "composition": [
+              "[P1] 双主体并排坐在画面中央的中景构图，左侧主体在左，右侧主体在右"
+            ]
+          },
+          "audio_layer": {
+            "dialogue_content": [
+              "[P0] 完全复用原视频的对话文本：'假如生活欺骗了你，那你就去吃披萨。' '为什么？' '因为披萨只有6片和8片，没有欺骗哈哈哈哈。'"
+            ],
+            "dialogue_style": [
+              "[P1] 保留原视频中戏谑、搞笑的语气，以及最后极其魔性、夸张的大笑声"
+            ],
+            "sound_effects": [
+              "[P1] 保留最后主体之间互相打闹、拍打的动作音效"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一位金发白种女性，身穿白色实验大褂（左胸印有蓝色Gorve字样），内搭白色上衣，戴着透明护目镜，面容清秀"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一位丧尸风格的女性，披散着黑色长发，皮肤极其苍白且布满青色血管，双眼翻白，身穿白色长袖衬衫和黑色开叉包臀短裙，脚穿黑色高跟鞋"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中的白猫",
+        "原视频中的灰猫"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "保持the video的室内客厅背景、固定机位和双主体构图，保留原视频完整的对话音频、魔性笑声及打斗音效。将左侧的白猫替换为Image 1中的金发护目镜白大褂女性，将右侧的灰猫替换为Image 2中的丧尸风格黑裙女性。让左侧的金发女性演绎原白猫的台词并仰头大笑，右侧的丧尸女性倾听后突然伸手打向金发女性，随后两人倒地扭打。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "宠物拟人化互动",
+        "极具反差感的突然肢体冲突（一巴掌打断施法）",
+        "夸张的仰头大笑动作"
+      ],
+      "audio_layer_hooks": [
+        "经典的谐音梗冷笑话（欺骗/七片）",
+        "极具感染力和魔性洗脑的狂笑声",
+        "清脆突兀的打斗动作音效"
+      ]
+    }
+  }
+}

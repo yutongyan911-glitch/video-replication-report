@@ -1,0 +1,68 @@
+{
+  "index": "效果广告爆款_030",
+  "zh_prompt": "参考 the video 视频中的视频效果，以 object_1 为主体，改变 the video 中的指令，将指令改为黑色棒球帽，黑色长裙和黑色皮鞋，其余效果与视频效果一致。",
+  "running_params": "{\"duration\": \"6s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": false}",
+  "result": {
+    "intent_summary": "用户希望以 object_1 中的女孩为主体，复刻 the video 中模拟手机APP点击标签进行一键变装的视觉特效与交互过程，并将变装的选项指令替换为“黑色棒球帽”、“黑色长裙”和“黑色皮鞋”。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "presentation_format": [
+              "[P0] 模拟手机APP界面中AI一键换装/变装的操作演示视频体裁"
+            ],
+            "special_effects": [
+              "[P0] 屏幕上出现鼠标指针，右侧弹出选项标签，点击标签后人物身上的服饰瞬间发生改变的视觉特效"
+            ],
+            "editing_techniques": [
+              "[P0] 鼠标指针移动并点击右侧选项标签的交互动画，点击后人物瞬间变装的硬切转场"
+            ],
+            "visual_style": [
+              "[P1] 纯白背景的棚拍质感，带有手机UI界面覆盖的视觉风格"
+            ],
+            "environment": [
+              "[P1] 纯白色背景，带有手机APP界面元素（顶部状态栏、底部工具栏等）"
+            ],
+            "composition": [
+              "[P1] 人物居中全身竖屏构图，UI元素分布在屏幕边缘和右侧"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P0] 轻松、节奏感强的电子背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "object_1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 扎着丸子头的年轻亚洲女性，穿着红色带帽毛衣（带毛球抽绳），内搭白色蕾丝边上衣，下穿蓝色宽松牛仔裤，斜挎一个毛绒小狗包，脚穿灰白色运动鞋"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video 中的短发女孩主体及其初始服装（黑色背心、白衬衫、黑裤子）",
+        "the video 中的具体UI指令标签文本（如“小猫发箍”、“翻领衬衫”、“女仆围裙”等）及其对应的变装结果"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "以 object_1 中的女孩（扎丸子头，穿红色毛衣、牛仔裤，背小狗包）为初始主体，置于纯白背景中，画面覆盖类似 the video 的手机APP界面。模拟鼠标指针移动并点击右侧弹出的选项标签，标签文字依次修改为“黑色棒球帽”、“黑色长裙”、“黑色皮鞋”。每次点击标签后，女孩瞬间换上对应的服饰（戴上黑色棒球帽、换上黑色长裙、穿上黑色皮鞋）。保留 the video 的原版电子背景音乐。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "模拟UI交互的沉浸感",
+        "一键变装的爽感与视觉冲击力",
+        "新奇的AI玩法展示"
+      ],
+      "audio_layer_hooks": [
+        "节奏感强、轻松欢快的BGM，配合变装卡点增强动感"
+      ]
+    }
+  }
+}

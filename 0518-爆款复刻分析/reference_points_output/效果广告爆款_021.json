@@ -1,0 +1,96 @@
+{
+  "index": "效果广告爆款_021",
+  "zh_prompt": "参考 the video 视频效果，生成一段主体为 Image 1 ，Image 2，Image 3 Image 4 的视频，最后选中 Image 2。",
+  "running_params": "{\"duration\": \"8s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "复刻原视频中手在空中滑动点选悬浮物品的互动特效，将候选项替换为提供的四张图片中的物品，并最终选中Image 2中的渐变色瓶子进行细节展示。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 一只手在画面前方做出左右滑动、点选的动作，最后手指明确点击选中其中一个悬浮物品"
+            ],
+            "special_effects": [
+              "[P0] 多个物品以无背景贴纸的形式悬浮在半空中，随着手的动作进行切换轮播，被选中后产生放大并转场的视觉特效"
+            ],
+            "presentation_format": [
+              "[P0] 视频前半段为多个物品的悬浮展示与手部选择过程，后半段转为对最终选中物品的特写与细节展示"
+            ],
+            "visual_style": [
+              "[P1] 整体呈现暖色调、柔和的粉色系光影氛围"
+            ],
+            "environment": [
+              "[P1] 背景为一面带有粉色画作相框的墙壁，画面前景为一只留有法式长美甲的手"
+            ],
+            "composition": [
+              "[P1] 采用第一人称视角的近景特写构图，手部和悬浮物品占据画面视觉中心"
+            ]
+          },
+          "audio_layer": {
+            "music_exact": [
+              "[P1] 保留原视频中带有强烈节奏感和特定人声说唱的背景音乐"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶装有绿色液体的香氛，带有深色木质质感瓶盖和复古黄色标签（NECTAR AMBRÉ）"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶带有金属银色盖子的圆柱形瓶子，瓶身呈现粉、紫、橙、绿相间的磨砂渐变色彩，瓶身中央有一个银色圆环标志"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶SK-II神仙水，透明磨砂玻璃瓶身，银色瓶盖，瓶身印有醒目的红色SK-II Logo"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 4",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一瓶orosa品牌的粉色指甲油，透明方形玻璃瓶身，白色圆柱形瓶盖"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中悬浮的红色口红等原有候选项物品",
+        "原视频后半段展示口红打开并涂抹在手上的具体细节画面"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段第一人称视角的互动视频。视觉层：画面背景保持暖粉色调的墙面与相框，前景为一只留有美甲的手。半空中以无背景贴纸形式悬浮展示四个物品（Image 1的绿色香氛、Image 2的渐变色瓶、Image 3的SK-II神仙水、Image 4的粉色指甲油）。手在空中做出滑动切换的动作，四个物品随之轮播。最后手指明确点击选中Image 2（渐变色瓶子），随后画面特效转场，特写展示该渐变色瓶子的外观细节。音频层：全程使用原视频的节奏感说唱背景音乐，动作需与音乐节奏卡点。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "第一人称视角的强代入感",
+        "类似AR交互的悬浮物品点选特效",
+        "流畅的动作卡点与转场展示",
+        "暖色调与精致美甲带来的高颜值视觉体验"
+      ],
+      "audio_layer_hooks": [
+        "洗脑且节奏感极强的BGM，配合动作卡点极大增强了观看的爽感与节奏感"
+      ]
+    }
+  }
+}

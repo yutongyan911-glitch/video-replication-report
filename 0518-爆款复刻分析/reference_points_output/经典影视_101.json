@@ -1,0 +1,87 @@
+{
+  "index": "经典影视_101",
+  "zh_prompt": "复刻 the video 的战斗动作、音效和分镜，把 the video 中的黑色皮肤的人物当作 Image 1 ，把 the video 中的白色皮肤的人物当作 Image 2 ，生成 Image 1 和 Image 2 在 Image 3 的场景中战斗的视频",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"16:9\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "将原视频中的两个战斗角色分别替换为Image 1和Image 2中的角色，并将背景替换为Image 3的峡谷场景，同时完美复刻原视频的战斗动作、分镜和音效",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "subject_actions": [
+              "[P0] 保留原视频中两个角色的激烈战斗动作，包括空中飞行、俯冲、挥拳攻击、释放能量波、近身肉搏及受击反应等"
+            ],
+            "camera_movement": [
+              "[P0] 保留原视频的动态运镜，包括跟随角色高速移动的镜头、快速推拉以及视角的剧烈旋转"
+            ],
+            "composition": [
+              "[P0] 保留原视频的分镜构图，包括角色的面部特写、极具张力的透视构图、俯视与仰视视角的切换"
+            ],
+            "editing_techniques": [
+              "[P0] 保留原视频的剪辑节奏，包括动作卡点的快速切换和连贯的战斗转场"
+            ],
+            "special_effects": [
+              "[P1] 保留原视频中的战斗视觉特效，如能量光波、气流冲击、碎石飞溅和光影闪烁"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P0] 强制保留原视频中的所有战斗音效，包括拳脚相加的沉重打击声、能量爆发的轰鸣声、高速移动的破空声等"
+            ],
+            "ambient_sound": [
+              "[P1] 保留原视频中伴随战斗的环境底噪"
+            ]
+          }
+        },
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 作为替换原视频中黑皮肤、戴火焰面具人物的新角色外观参考（依据用户指令占位）"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 2",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 拟人化的棕熊，体型健硕，身穿蓝色中式对襟练功服，衣服上有精美暗纹，腰系黄色腰带和带有小熊图案的红色护腰，侧面挂着一个木质葫芦，背后印有金色的“熊”字，脚穿黑色布鞋。作为替换原视频中白发白肤长翅膀人物的新角色外观参考"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "Image 3",
+          "visual_layer": {
+            "environment": [
+              "[P0] 幽深险峻的峡谷场景，两侧是陡峭高耸的岩壁，岩石上长满绿色植被，谷底有湍急的白色河流，远处有云雾缭绕的山峰，整体氛围阴沉且气势磅礴。作为全新的战斗背景"
+            ]
+          },
+          "audio_layer": {}
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "原视频中黑皮肤戴火焰面具人物的外观特征",
+        "原视频中白发白肤长翅膀人物的外观特征",
+        "原视频中的山地背景"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "以 the video 为基础进行视频重绘。将原视频中的黑皮肤人物替换为 Image 1 中的角色，将白皮肤人物替换为 Image 2 中的穿着蓝色中式练功服的棕熊，将战斗背景替换为 Image 3 中的险峻峡谷与湍急河流场景。在生成过程中，必须严格复刻 the video 的所有战斗动作、运镜轨迹、分镜构图与剪辑节奏，并完美保留原视频的战斗打击音效与环境音。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具张力的透视构图与高速流畅的战斗动作",
+        "强烈的视觉冲击力与快节奏的动作分镜剪辑"
+      ],
+      "audio_layer_hooks": [
+        "拳拳到肉的沉重打击音效",
+        "配合高燃战斗画面的能量爆发与破空声效"
+      ]
+    }
+  }
+}

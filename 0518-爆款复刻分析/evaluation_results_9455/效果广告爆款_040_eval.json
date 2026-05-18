@@ -1,0 +1,14 @@
+{
+  "index": "效果广告爆款_040",
+  "evaluation": {
+    "p0_evaluation": "【✅ 达成内容】presentation_format：成功呈现农产品原产地直销广告体裁，依次包含了手持水果展示、人物大口试吃特写、包装盒内部展示以及果园背景等核心环节。\n【✅ 达成内容】composition：使用了极近距离的特写镜头，如小男孩咬下果肉的局部特写、包装盒内部排列的俯拍特写等，符合要求。",
+    "p1_evaluation": "【✅ 达成内容】environment：前半段视频成功营造了户外的自然果园背景，包含真实的绿叶和果树。\n【❌ 未达成/有缺失：简述错误】subject_actions：虽然有展示水果和包装的动作，但参考点及Prompt中要求的“女子侧脸大口咬下水果”未达成，视频中替换为了小男孩试吃。\n【✅ 达成内容】editing_techniques：采用了多个短镜头快切拼接，节奏紧凑，全方位展示了苹果的外观、内部、包装和食用场景。\n【✅ 达成内容】dialogue_style：使用了热情、极具感染力的电商带货AI配音，且精准复现了Prompt中要求的全部台词。",
+    "visual_score": 85,
+    "audio_score": 100,
+    "total_score": 90,
+    "is_qualified": true,
+    "failure_reasons": null,
+    "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 >= 60）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。视频精准命中了P0级别的所有视觉要求，音频台词完美契合，仅在P1的试吃人物设定上（女子变为男孩）有微小偏差，整体质量优秀，予以合格。"
+  },
+  "timestamp": "2026-05-18 14:27:42"
+}

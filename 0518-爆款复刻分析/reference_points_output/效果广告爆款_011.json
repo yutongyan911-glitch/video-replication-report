@@ -1,0 +1,71 @@
+{
+  "index": "效果广告爆款_011",
+  "zh_prompt": "以 Image 1 为主体，参考 the video 视频中的运镜，视频效果，生成一段新的视频。",
+  "running_params": "{\"duration\": \"6s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "以图片中的双层黄金项链为主体，复用视频中打响指卡点转场的特写运镜与剪辑效果，生成一段展示该项链的新视频。",
+    "inferred_task_type": "Reference",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "Image 1",
+          "visual_layer": {
+            "entity_subject": [
+              "[P0] 一条双层黄金项链，上层为较粗的链条搭配T型扣，下层为细链条搭配带有镶钻C字母和菱格纹的长方形吊坠"
+            ]
+          },
+          "audio_layer": {}
+        },
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "camera_movement": [
+              "[P0] 针对首饰佩戴部位的极近距离特写镜头，保持焦点在首饰上"
+            ],
+            "editing_techniques": [
+              "[P0] 配合前景动作（如打响指）进行的快速剪辑与无缝卡点转场"
+            ],
+            "entity_subject": [
+              "[P1] 佩戴首饰的女性模特局部特征（包括白皙的颈部肌肤、耳部以及涂有红色指甲油的手指）"
+            ],
+            "subject_actions": [
+              "[P1] 人物手指在画面前景打响指的动作"
+            ],
+            "composition": [
+              "[P1] 聚焦于人物局部（如颈部）的特写构图，虚化背景以突出首饰细节"
+            ],
+            "visual_style": [
+              "[P1] 柔和且富有质感的暖色调光影，强调黄金首饰的金属光泽与高级感"
+            ]
+          },
+          "audio_layer": {
+            "sound_effects": [
+              "[P1] 清脆的打响指音效，与画面的视觉转场严格同步"
+            ],
+            "music_genre": [
+              "[P1] 具有明显节奏感、适合配合动作卡点剪辑的背景音乐"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "the video中原有的多款黄金项链与耳环（被Image 1中的双层黄金项链替换）"
+      ],
+      "audio_layer_discards": []
+    },
+    "generation_instructions": "生成一段视频，画面主体替换为Image 1中的双层黄金项链（佩戴在女性模特的颈部）。保留the video中的特写构图、暖色调光影以及女性模特的局部特征。画面前景需出现涂有红色指甲油的手指打响指的动作，并配合响指动作与清脆音效，使用快切和卡点转场效果全方位展示该项链的细节与佩戴效果。背景音乐需具备强烈的节奏感以契合转场。",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉冲击力的局部特写构图",
+        "配合响指动作的丝滑卡点换物转场",
+        "黄金首饰在暖光下的高级质感展现"
+      ],
+      "audio_layer_hooks": [
+        "清脆解压的响指音效",
+        "节奏感极强的卡点背景音乐"
+      ]
+    }
+  }
+}

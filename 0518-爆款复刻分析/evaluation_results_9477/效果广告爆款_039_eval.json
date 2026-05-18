@@ -1,0 +1,14 @@
+{
+  "index": "效果广告爆款_039",
+  "evaluation": {
+    "p0_evaluation": "❌ 未达成：[camera_movement] 镜头初始并非极度贴近主体的微距状态，且向后拉远时仅有轻微的角度变化，完全没有体现出“强烈的旋转效果”。\n❌ 未达成：[composition] 开篇并未达到充满画面的局部特写程度，主体一开始就暴露了较多整体结构。\n✅ 达成内容：[presentation_format] 采用了产品展示广告体裁，具备一定的从局部到整体的展示逻辑。\n✅ 达成内容：[entity_subject] 准确生成了纯白色的入耳式真无线蓝牙耳机及开启的充电盒，亮面塑料质感还原较好。",
+    "p1_evaluation": "✅ 达成内容：[visual_style] 具备高级商业广告质感，打光较好地展现了主体的轮廓和材质光泽。\n❌ 未达成：[environment] 背景为纯黑色，未能呈现要求的“渐变色背景”效果。",
+    "visual_score": 40,
+    "audio_score": 100,
+    "total_score": 58,
+    "is_qualified": false,
+    "failure_reasons": "未能实现核心的运镜要求：开场缺乏极度贴近的微距特写，且拉远过程中缺失强烈的旋转效果；背景也未能呈现渐变色。",
+    "scoring_logic": "视觉权重 70%，音频权重 30%。总分 = visual_score * 0.7 + audio_score * 0.3。合格判定条件：P0 必须全部为 ✅ 或总分合理（或总分 >= 60）。若 P0 中存在任何 ❌，则判定强制为不合格 (is_qualified: false)。"
+  },
+  "timestamp": "2026-05-18 14:44:35"
+}

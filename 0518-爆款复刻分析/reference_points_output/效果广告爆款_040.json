@@ -1,0 +1,59 @@
+{
+  "index": "效果广告爆款_040",
+  "zh_prompt": "参考 the video，生成一段烟台红富士的广告片，台词和文案为:“家人们，这苹果真的绝了！又脆又甜，小朋友都抢着吃！都是新鲜现发，个个红润，真的很甜！上班来一个，解渴又提神，晚上来一个，清爽不负担～”",
+  "running_params": "{\"duration\": \"15s\", \"aspect_ratio\": \"9:16\", \"prefer_multi_shots\": true}",
+  "result": {
+    "intent_summary": "参考原视频的农产品带货广告形式，将展示主体替换为烟台红富士苹果，并使用全新的带货台词进行配音。",
+    "inferred_task_type": "Edit",
+    "reference_points": {
+      "assets_mapping": [
+        {
+          "asset_id": "the video",
+          "visual_layer": {
+            "presentation_format": [
+              "[P0] 农产品原产地直销广告体裁，依次包含手持果篮展示、人物大口试吃特写、外包装盒展示、开箱内部展示以及果树挂果展示等环节"
+            ],
+            "composition": [
+              "[P0] 极近距离的特写镜头，如嘴部咬下果肉的局部特写、手捧果篮的居中特写、包装盒内部排列的俯拍特写"
+            ],
+            "environment": [
+              "[P1] 户外的自然果园背景，画面中包含真实的绿叶、树枝和自然光影，营造原产地新鲜采摘的氛围"
+            ],
+            "subject_actions": [
+              "[P1] 双手捧起装满水果的编织篮，女子侧脸大口咬下水果，双手端着包装盒向镜头展示"
+            ],
+            "editing_techniques": [
+              "[P1] 多个短镜头快切拼接，节奏紧凑，全方位展示水果的外观、口感、包装和生长环境"
+            ]
+          },
+          "audio_layer": {
+            "dialogue_style": [
+              "[P1] 热情、接地气、极具感染力的电商带货口吻，清晰洪亮的AI配音风格"
+            ]
+          }
+        }
+      ]
+    },
+    "discard_elements": {
+      "visual_layer_discards": [
+        "绿色的砀山蜜梨（青皮梨）",
+        "印有“大砀山果园 青皮蜜梨”字样的包装盒"
+      ],
+      "audio_layer_discards": [
+        "原视频的所有解说台词（如“这就是我们的砀山蜜梨...”等）"
+      ]
+    },
+    "generation_instructions": "Visual: Generate a promotional video for Yantai Fuji apples, adopting a direct-sale agricultural ad format. The video should feature a sequence of close-up shots: hands holding a woven basket full of red Fuji apples, a close-up of a woman taking a big bite of a red apple showing its crispness, a display of the packaging box, an unboxing shot showing the apples neatly arranged inside, and apples hanging on a tree. The background should be a natural outdoor orchard with green leaves and branches. Audio: Use an enthusiastic, engaging e-commerce voiceover style to read the following script: '家人们，这苹果真的绝了！又脆又甜，小朋友都抢着吃！都是新鲜现发，个个红润，真的很甜！上班来一个，解渴又提神，晚上来一个，清爽不负担～'",
+    "traffic_code_analysis": {
+      "visual_layer_hooks": [
+        "极具视觉冲击力的咬水果特写镜头，直接传递水果脆甜多汁的口感",
+        "真实的果园背景和树上挂果镜头，增强原产地直发的信任感和新鲜度",
+        "满满一盒的开箱展示，利用视觉丰盛感刺激购买欲"
+      ],
+      "audio_layer_hooks": [
+        "开门见山直接介绍产品核心卖点（产地、口感），没有废话",
+        "使用极具煽动性和接地气的带货话术，拉近与消费者的距离"
+      ]
+    }
+  }
+}
